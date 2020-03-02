@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct Response: Codable {
     var status: Status
@@ -15,6 +16,10 @@ struct Response: Codable {
 
 struct Status: Codable {
     var isOn: Bool
+    var title: String
+    var message: String
+    var linkTitle: String
+    var appStoreUrl: String
 }
 
 struct RMSConfig: Codable {
@@ -32,8 +37,24 @@ class Config {
 
     init() {}
 
+    func handleAlertPress() {
+        if let url = URL(string: self.status.appStoreUrl) {
+            #if targetEnvironment(simulator)
+                print("The simulator does not support the App Store and so will display 'Safair cannot open the page because the address is invalid.' :(")
+            #else
+                if #available(iOS 10.0, *) {
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                } else {
+                    if UIApplication.shared.canOpenURL(url as URL) {
+                        UIApplication.shared.openURL(url as URL)
+                    }
+                }
+            #endif
+        }
+    }
+
     func load(withCompletion completion: @escaping (Bool) -> Void) {
-        guard let url = URL(string: "https://iplayer-radio-mobile-appconfig.files.bbci.co.uk/appconfig/cap/ios/1.6.0/config.json") else {
+        guard let url = URL(string: "https://iplayer-radio-mobile-appconfig.files.bbci.co.uk/appconfig/cap/ios/1.5.0/config.json") else {
             print("Invalid URL")
             return
         }
@@ -44,8 +65,8 @@ class Config {
                     DispatchQueue.main.async {
                         self.status = decodedResponse.status
                         self.rms = decodedResponse.rmsConfig
+                        completion(true)
                     }
-                    completion(true)
                     return
                 }
             }
