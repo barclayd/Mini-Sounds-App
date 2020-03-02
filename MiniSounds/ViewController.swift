@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     let nextButton = UIButton()
+    let updateAlert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
     let config = Config()
 
     override func viewDidLoad() {
@@ -18,11 +19,22 @@ class ViewController: UIViewController {
         setUpNextButton()
 
         config.load { success in
-            print("loaded", success)
-            print(self.config.showUpdateAlert)
+            if success, self.config.showUpdateAlert {
+                self.updateAlert.title = self.config.status.title
+                self.updateAlert.message = self.config.status.message
+                self.updateAlert.addAction(UIAlertAction(title: self.config.status.linkTitle, style: .default, handler: { _ in
+                    self.config.handleAlertPress()
+                    self.showUpdateAlert()
+                }))
+                self.showUpdateAlert()
+            }
         }
 
         view.backgroundColor = .red
+    }
+
+    func showUpdateAlert() {
+        present(updateAlert, animated: true)
     }
 
     func setUpNextButton() {
