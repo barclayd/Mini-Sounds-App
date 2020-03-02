@@ -16,6 +16,7 @@
 		ACF2229E240D077B00E6E065 /* MiniSoundsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF2229D240D077B00E6E065 /* MiniSoundsTests.swift */; };
 		ACF222A9240D077B00E6E065 /* MiniSoundsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF222A8240D077B00E6E065 /* MiniSoundsUITests.swift */; };
 		ACF222B8240D2F0E00E6E065 /* SecondScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF222B7240D2F0E00E6E065 /* SecondScreen.swift */; };
+		ACF222BB240D34AC00E6E065 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF222BA240D34AC00E6E065 /* Config.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		ACF222A8240D077B00E6E065 /* MiniSoundsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniSoundsUITests.swift; sourceTree = "<group>"; };
 		ACF222AA240D077B00E6E065 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACF222B7240D2F0E00E6E065 /* SecondScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondScreen.swift; sourceTree = "<group>"; };
+		ACF222BA240D34AC00E6E065 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		ACF22285240D077900E6E065 /* MiniSounds */ = {
 			isa = PBXGroup;
 			children = (
+				ACF222B9240D340800E6E065 /* Models */,
 				ACF222B6240D2EF400E6E065 /* Screens */,
 				ACF22286240D077900E6E065 /* AppDelegate.swift */,
 				ACF22288240D077900E6E065 /* SceneDelegate.swift */,
@@ -137,6 +140,14 @@
 				ACF222B7240D2F0E00E6E065 /* SecondScreen.swift */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		ACF222B9240D340800E6E065 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				ACF222BA240D34AC00E6E065 /* Config.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,6 +283,7 @@
 			files = (
 				ACF2228B240D077900E6E065 /* ViewController.swift in Sources */,
 				ACF222B8240D2F0E00E6E065 /* SecondScreen.swift in Sources */,
+				ACF222BB240D34AC00E6E065 /* Config.swift in Sources */,
 				ACF22287240D077900E6E065 /* AppDelegate.swift in Sources */,
 				ACF22289240D077900E6E065 /* SceneDelegate.swift in Sources */,
 			);

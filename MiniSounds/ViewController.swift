@@ -10,19 +10,25 @@ import UIKit
 
 class ViewController: UIViewController {
     let nextButton = UIButton()
+    let config = Config()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setUpNextButton()
+
+        config.load { success in
+            print("loaded", success)
+            print(self.config.showUpdateAlert)
+        }
+
         view.backgroundColor = .red
     }
 
     func setUpNextButton() {
         nextButton.backgroundColor = .white
         nextButton.setTitleColor(.blue, for: .normal)
-        nextButton.setTitle("Next", for: .normal)
-
+        nextButton.setTitle("Podcasts", for: .normal)
         nextButton.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
 
         view.addSubview(nextButton)
