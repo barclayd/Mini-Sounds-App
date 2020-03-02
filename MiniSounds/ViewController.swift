@@ -10,19 +10,37 @@ import UIKit
 
 class ViewController: UIViewController {
     let nextButton = UIButton()
+    let updateAlert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+    let config = Config()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setUpNextButton()
+
+        config.load { success in
+            if success, self.config.showUpdateAlert {
+                self.updateAlert.title = self.config.status.title
+                self.updateAlert.message = self.config.status.message
+                self.updateAlert.addAction(UIAlertAction(title: self.config.status.linkTitle, style: .default, handler: { _ in
+                    self.config.handleAlertPress()
+                    self.showUpdateAlert()
+                }))
+                self.showUpdateAlert()
+            }
+        }
+
         view.backgroundColor = .red
+    }
+
+    func showUpdateAlert() {
+        present(updateAlert, animated: true)
     }
 
     func setUpNextButton() {
         nextButton.backgroundColor = .white
         nextButton.setTitleColor(.blue, for: .normal)
-        nextButton.setTitle("Next", for: .normal)
-
+        nextButton.setTitle("Podcasts", for: .normal)
         nextButton.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
 
         view.addSubview(nextButton)
