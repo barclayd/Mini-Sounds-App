@@ -71,6 +71,10 @@ class Config {
         !(self.status?.isOn ?? true)
     }
 
+    var playableItemsUrl: String {
+        "\(self.rms?.rootUrl ?? "")/v2/networks/playable?promoted=true"
+    }
+
     func handleAlertPress() {
         if let url = URL(string: self.status.appStoreUrl) {
             #if targetEnvironment(simulator)
@@ -110,7 +114,7 @@ class Config {
     }
 
     func getPlayableItems(urlSession: URLSession = URLSession.shared, withCompletion completion: @escaping (Bool) -> Void) {
-        guard let url = URL(string: "\(self.rms.rootUrl)/v2/networks/playable?promoted=true") else {
+        guard let url = URL(string: self.playableItemsUrl) else {
             print("Invalid URL. Check that load was called to populate the rootUrl")
             return
         }

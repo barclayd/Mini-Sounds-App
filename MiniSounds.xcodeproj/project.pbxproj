@@ -10,6 +10,7 @@
 		AC9917CF240E7BF600852F9C /* UIColour.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9917CE240E7BF600852F9C /* UIColour.swift */; };
 		AC9917D1240E7C7B00852F9C /* AutoLayoutConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9917D0240E7C7B00852F9C /* AutoLayoutConstraints.swift */; };
 		AC9917D4240E7E3A00852F9C /* PlayableItemsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9917D3240E7E3A00852F9C /* PlayableItemsVC.swift */; };
+		AC9917D7240E813700852F9C /* PlayableItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9917D6240E813700852F9C /* PlayableItemCell.swift */; };
 		ACF22287240D077900E6E065 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF22286240D077900E6E065 /* AppDelegate.swift */; };
 		ACF22289240D077900E6E065 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF22288240D077900E6E065 /* SceneDelegate.swift */; };
 		ACF2228B240D077900E6E065 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF2228A240D077900E6E065 /* ViewController.swift */; };
@@ -46,6 +47,7 @@
 		AC9917CE240E7BF600852F9C /* UIColour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColour.swift; sourceTree = "<group>"; };
 		AC9917D0240E7C7B00852F9C /* AutoLayoutConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLayoutConstraints.swift; sourceTree = "<group>"; };
 		AC9917D3240E7E3A00852F9C /* PlayableItemsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayableItemsVC.swift; sourceTree = "<group>"; };
+		AC9917D6240E813700852F9C /* PlayableItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayableItemCell.swift; sourceTree = "<group>"; };
 		ACF22283240D077900E6E065 /* MiniSounds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniSounds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACF22286240D077900E6E065 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACF22288240D077900E6E065 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +102,14 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		AC9917D5240E810C00852F9C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				AC9917D6240E813700852F9C /* PlayableItemCell.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		ACF2227A240D077900E6E065 = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +133,7 @@
 		ACF22285240D077900E6E065 /* MiniSounds */ = {
 			isa = PBXGroup;
 			children = (
+				AC9917D5240E810C00852F9C /* Components */,
 				AC9917D2240E7E0200852F9C /* Controllers */,
 				ACF222C6240D618600E6E065 /* Extensions */,
 				ACF222B9240D340800E6E065 /* Models */,
@@ -329,6 +340,7 @@
 				AC9917D4240E7E3A00852F9C /* PlayableItemsVC.swift in Sources */,
 				ACF222B8240D2F0E00E6E065 /* SecondScreen.swift in Sources */,
 				ACF222BB240D34AC00E6E065 /* Config.swift in Sources */,
+				AC9917D7240E813700852F9C /* PlayableItemCell.swift in Sources */,
 				AC9917D1240E7C7B00852F9C /* AutoLayoutConstraints.swift in Sources */,
 				ACF22287240D077900E6E065 /* AppDelegate.swift in Sources */,
 				ACF22289240D077900E6E065 /* SceneDelegate.swift in Sources */,
