@@ -1,0 +1,92 @@
+{
+    "status": {
+        "isOn": true,
+        "title" : "Please Update",
+        "message" : "Download now for the best experience.",
+        "linkTitle" : "Go to store",
+        "appStoreUrl": "https://itunes.apple.com/us/app/bbc-sounds-radio-podcasts/id1380676511?ls=1&mt=8"
+    },
+    "idv5Config": {
+            "context": "default",
+            "hybrid": false,
+            "clientId": "soundsNMA",
+            "redirectUrl": "https://www.bbc.com/radio",
+            "userOrigin": "soundsNMA",
+            "idctaConfigUrl": "https://idcta.api.bbc.com/idcta/config"
+    },
+    "rmsConfig": {
+        "apiKey": "CMaDBLjA22vTlAevwKqF7c1triBFn6Jk",
+        "rootUrl": "https://rms.api.bbc.co.uk",
+        "listenPath": "/v2/my/experience/inline/listen",
+        "playsPath": "/v2/my/programmes/plays",
+        "searchPath": "/v2/experience/inline/search",
+        "allStationsPath": "/v2/experience/stations",
+        "activitiesPath": "/v2/my/activities",
+        "mySoundsPath": "/v2/my/experience/sounds",
+        "broadcastsPath": "/v2/broadcasts/poll",
+        "tracklistsPath": "/v2/versions/{vpid}/tracks/display",
+        "containerPath": "/v2/my/experience/container",
+        "playableDetailTemplatePath": "/v2/my/programmes/{pid}/playable",
+        "schedulesTemplatePath": "/v2/experience/inline/schedules/{serviceId}/{date}",
+        "playDataHeartbeatIntervalSeconds": 60,
+        "themes": {
+            "listen_live": "dial",
+            "listen_later": "basic_small",
+            "listen_later_empty": "basic",
+            "continue_listening": "basic_small",
+            "recommendations": "basic_large",
+            "music_mixes": "basic_large",
+            "promoted_stations": "basic",
+            "local_stations": "basic",
+            "favourites": "basic",
+            "latest": "basic",
+            "search_empty": "basic",
+            "playable_search": "basic",
+            "container_search": "impact_large",
+            "editorial_collection": "basic_small",
+            "collections": "impact_alt",
+            "categories": "impact_small",
+            "follows": "impact",
+            "schedule_items" : "schedule",
+            "priority_brands" : "impact_large"
+        }
+    },
+    "datePicker": {
+        "daysPast": 30,
+        "daysFuture": 7
+    },
+    "uiConfig": {
+        "viewMaxAgeSeconds": 300
+    },
+    "statsConfig": {
+        "atiEnabled": true,
+        "comscoreEnabled": true,
+        "releaseDestinationIsLive": true,
+        "radioAudioPageLabelPrefixEnabled": false
+    },
+    "playbackConfig": {
+        "mediaSelectorConfig": {
+            "baseUrl": "https://open.live.bbc.co.uk/mediaselector/6/select/version/2.0/format/json",
+            "mediaSetConfig": {
+                "low" : "mobile-cellular-main",
+                "high" : "mobile-phone-main"
+            }
+        }
+    },
+    "settingsConfig": {
+        "faqUrl": "https://www.bbc.co.uk/sounds/help/questions/mobile-and-tablet-issues/sounds-app-help",
+        "termsUrl": "https://www.bbc.co.uk/usingthebbc/terms-of-use",
+        "privacyUrl": "https://www.bbc.co.uk/privacy",
+        "privacyNoticeUrl": "https://www.bbc.co.uk/sounds/help/questions/about-bbc-sounds-and-our-policies/sounds-app-privacy-notice"
+    },
+    "downloadConfig": {
+        "mediaSet": "mobile-download",
+        "axsServerTemplateUrl": "https://open.live.bbc.co.uk/drmauth/1/version/1.0/mediaset/{mediaSet}/vpid/{vpid}/",
+        "hssLicenceServerOverrideUrl": null
+    },
+    "shareConfig": {
+        "episodeTemplateUrl": "https://www.bbc.co.uk/sounds/play/{pid}",
+        "containerTemplateUrl": "https://www.bbc.co.uk/programmes/{collectionId}"
+    }
+}
+
