@@ -24,13 +24,11 @@ class configTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testUpdateAlertIstrueWhenisOnIsFalse() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        let jsonString = """
+    func generateMockJSON(isOn: Bool, title: String = "Please Update", message: String = "Download now for the best experience.", linkTitle: String = "Go to store", appStoreUrl: String = "https://itunes.apple.com/us/app/bbc-sounds-radio-podcasts/id1380676511?ls=1&mt=8", apiKey: String = "CMaDBLjA22vTlAevwKqF7c1triBFn6Jk", rootUrl: String = "https://rms.api.bbc.co.uk") -> String {
+        """
         {
             "status": {
-                "isOn": false,
+                "isOn": \(isOn),
                 "title" : "Please Update",
                 "message" : "Download now for the best experience.",
                 "linkTitle" : "Go to store",
@@ -42,6 +40,9 @@ class configTests: XCTestCase {
             }
         }
         """
+    }
+
+    func generateURLSessionMock(jsonString: String) -> URLSession {
         let url = URL(string: "https://iplayer-radio-mobile-appconfig.files.bbci.co.uk/appconfig/cap/ios/1.6.0/config.json")
 
         URLProtocolMock.testURLs = [url: Data(jsonString.utf8)]
@@ -50,10 +51,11 @@ class configTests: XCTestCase {
         let configuration = URLSessionConfiguration.ephemeral
         configuration.protocolClasses = [URLProtocolMock.self]
 
-        let session = URLSession(configuration: configuration)
+        return URLSession(configuration: configuration)
+    }
 
-        config.load(urlSession: session) { success in
-            print(success)
+    func testUpdateAlertIstrueWhenisOnIsFalse() {
+        config.load(urlSession: generateURLSessionMock(jsonString: generateMockJSON(isOn: false))) { success in
             if success {
                 XCTAssertTrue(self.config.showUpdateAlert)
             }
@@ -63,35 +65,7 @@ class configTests: XCTestCase {
     }
 
     func testUpdateAlertIsFalseWhenisOnIsTrue() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        let jsonString = """
-        {
-            "status": {
-                "isOn": true,
-                "title" : "Please Update",
-                "message" : "Download now for the best experience.",
-                "linkTitle" : "Go to store",
-                "appStoreUrl": "https://itunes.apple.com/us/app/bbc-sounds-radio-podcasts/id1380676511?ls=1&mt=8"
-            },
-            "rmsConfig": {
-                "apiKey": "CMaDBLjA22vTlAevwKqF7c1triBFn6Jk",
-                "rootUrl": "https://rms.api.bbc.co.uk",
-            }
-        }
-        """
-        let url = URL(string: "https://iplayer-radio-mobile-appconfig.files.bbci.co.uk/appconfig/cap/ios/1.6.0/config.json")
-
-        URLProtocolMock.testURLs = [url: Data(jsonString.utf8)]
-        print(URLProtocolMock.testURLs)
-
-        let configuration = URLSessionConfiguration.ephemeral
-        configuration.protocolClasses = [URLProtocolMock.self]
-
-        let session = URLSession(configuration: configuration)
-
-        config.load(urlSession: session) { success in
-            print(success)
+        config.load(urlSession: generateURLSessionMock(jsonString: generateMockJSON(isOn: true))) { success in
             if success {
                 XCTAssertFalse(self.config.showUpdateAlert)
             }
