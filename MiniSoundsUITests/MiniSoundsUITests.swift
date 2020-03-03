@@ -9,7 +9,6 @@
 import XCTest
 
 class MiniSoundsUITests: XCTestCase {
-
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
 
@@ -23,13 +22,20 @@ class MiniSoundsUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // UI tests must launch the application that they test.
+    func testAppLaunchesToTheCorrectScreen() {
         let app = XCUIApplication()
         app.launch()
 
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        XCTAssert(app.navigationBars["miniSounds"].isHittable)
+        XCTAssert(app.buttons["Podcasts"].isHittable)
+    }
+
+    func testTappingOnPodcastsButtonTakesUserToSecondScreen() {
+        let app = XCUIApplication()
+        app.launch()
+
+        app.buttons["Podcasts"].tap()
+        XCTAssert(app.navigationBars["Podcasts"].isHittable)
     }
 
     func testLaunchPerformance() {

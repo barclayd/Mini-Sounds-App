@@ -17,7 +17,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setUpNextButton()
+        loadConfig()
+        view.backgroundColor = UIColor(hex: "#ff4900")?.withAlphaComponent(0.5)
+    }
 
+    func loadConfig() {
         config.load { success in
             if success, self.config.showUpdateAlert {
                 self.updateAlert.title = self.config.status.title
@@ -27,10 +31,14 @@ class ViewController: UIViewController {
                     self.showUpdateAlert()
                 }))
                 self.showUpdateAlert()
+            } else {
+                self.config.getPlayableItems { success in
+                    if success {
+                        print(self.config.playable[0].network.logo_url)
+                    }
+                }
             }
         }
-
-        view.backgroundColor = .red
     }
 
     func showUpdateAlert() {
@@ -48,7 +56,7 @@ class ViewController: UIViewController {
     }
 
     @objc func nextButtonTapped() {
-        let nextScreen = SecondScreen()
+        let nextScreen = PlayableItemsVC(playableItems: config.playable)
         nextScreen.title = "Podcasts"
         navigationController?.pushViewController(nextScreen, animated: true)
     }
