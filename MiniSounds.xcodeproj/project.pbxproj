@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC9917CF240E7BF600852F9C /* UIColour.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9917CE240E7BF600852F9C /* UIColour.swift */; };
+		AC9917D1240E7C7B00852F9C /* AutoLayoutConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9917D0240E7C7B00852F9C /* AutoLayoutConstraints.swift */; };
 		ACF22287240D077900E6E065 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF22286240D077900E6E065 /* AppDelegate.swift */; };
 		ACF22289240D077900E6E065 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF22288240D077900E6E065 /* SceneDelegate.swift */; };
 		ACF2228B240D077900E6E065 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF2228A240D077900E6E065 /* ViewController.swift */; };
@@ -40,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AC9917CE240E7BF600852F9C /* UIColour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColour.swift; sourceTree = "<group>"; };
+		AC9917D0240E7C7B00852F9C /* AutoLayoutConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLayoutConstraints.swift; sourceTree = "<group>"; };
 		ACF22283240D077900E6E065 /* MiniSounds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniSounds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACF22286240D077900E6E065 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACF22288240D077900E6E065 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -171,6 +175,8 @@
 			isa = PBXGroup;
 			children = (
 				ACF222C7240D619200E6E065 /* Bundle.swift */,
+				AC9917CE240E7BF600852F9C /* UIColour.swift */,
+				AC9917D0240E7C7B00852F9C /* AutoLayoutConstraints.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -308,8 +314,10 @@
 			files = (
 				ACF2228B240D077900E6E065 /* ViewController.swift in Sources */,
 				ACF222C8240D619200E6E065 /* Bundle.swift in Sources */,
+				AC9917CF240E7BF600852F9C /* UIColour.swift in Sources */,
 				ACF222B8240D2F0E00E6E065 /* SecondScreen.swift in Sources */,
 				ACF222BB240D34AC00E6E065 /* Config.swift in Sources */,
+				AC9917D1240E7C7B00852F9C /* AutoLayoutConstraints.swift in Sources */,
 				ACF22287240D077900E6E065 /* AppDelegate.swift in Sources */,
 				ACF22289240D077900E6E065 /* SceneDelegate.swift in Sources */,
 			);
