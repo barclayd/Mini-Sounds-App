@@ -27,6 +27,12 @@ class ViewController: UIViewController {
                     self.showUpdateAlert()
                 }))
                 self.showUpdateAlert()
+            } else {
+                self.config.getPlayableItems { success in
+                    if success {
+                        print(self.config.playable[0].network.logo_url)
+                    }
+                }
             }
         }
 
