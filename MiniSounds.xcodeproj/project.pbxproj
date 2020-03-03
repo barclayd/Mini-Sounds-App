@@ -19,7 +19,6 @@
 		ACF222BB240D34AC00E6E065 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF222BA240D34AC00E6E065 /* Config.swift */; };
 		ACF222BD240D581F00E6E065 /* configTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF222BC240D581F00E6E065 /* configTests.swift */; };
 		ACF222C0240D59AF00E6E065 /* URLProtocolSub.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF222BF240D59AF00E6E065 /* URLProtocolSub.swift */; };
-		ACF222C5240D610100E6E065 /* configMock.json in Resources */ = {isa = PBXBuildFile; fileRef = ACF222C4240D610100E6E065 /* configMock.json */; };
 		ACF222C8240D619200E6E065 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF222C7240D619200E6E065 /* Bundle.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,7 +58,6 @@
 		ACF222BA240D34AC00E6E065 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		ACF222BC240D581F00E6E065 /* configTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = configTests.swift; sourceTree = "<group>"; };
 		ACF222BF240D59AF00E6E065 /* URLProtocolSub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolSub.swift; sourceTree = "<group>"; };
-		ACF222C4240D610100E6E065 /* configMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = configMock.json; sourceTree = "<group>"; };
 		ACF222C7240D619200E6E065 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,8 +126,7 @@
 		ACF2229C240D077B00E6E065 /* MiniSoundsTests */ = {
 			isa = PBXGroup;
 			children = (
-				ACF222C1240D60B500E6E065 /* MockData */,
-				ACF222BE240D599B00E6E065 /* Stubs */,
+				ACF222BE240D599B00E6E065 /* Mocks */,
 				ACF2229D240D077B00E6E065 /* MiniSoundsTests.swift */,
 				ACF2229F240D077B00E6E065 /* Info.plist */,
 				ACF222BC240D581F00E6E065 /* configTests.swift */,
@@ -162,20 +159,12 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		ACF222BE240D599B00E6E065 /* Stubs */ = {
+		ACF222BE240D599B00E6E065 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
 				ACF222BF240D59AF00E6E065 /* URLProtocolSub.swift */,
 			);
-			path = Stubs;
-			sourceTree = "<group>";
-		};
-		ACF222C1240D60B500E6E065 /* MockData */ = {
-			isa = PBXGroup;
-			children = (
-				ACF222C4240D610100E6E065 /* configMock.json */,
-			);
-			path = MockData;
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		ACF222C6240D618600E6E065 /* Extensions */ = {
@@ -300,7 +289,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACF222C5240D610100E6E065 /* configMock.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

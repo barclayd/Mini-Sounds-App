@@ -34,16 +34,10 @@ struct RMSConfig: Codable {
 class Config {
     var status: Status!
     var rms: RMSConfig!
-    var appConfigUrl = "https://iplayer-radio-mobile-appconfig.files.bbci.co.uk/appconfig/cap/ios/1.6.0/config.json"
+    let appConfigUrl = "https://iplayer-radio-mobile-appconfig.files.bbci.co.uk/appconfig/cap/ios/1.6.0/config.json"
 
     var showUpdateAlert: Bool {
         !(self.status?.isOn ?? true)
-    }
-
-    let urlSession: URLSession
-
-    init(urlSession: URLSession = URLSession.shared) {
-        self.urlSession = urlSession
     }
 
     func handleAlertPress() {
@@ -62,13 +56,13 @@ class Config {
         }
     }
 
-    func load(withCompletion completion: @escaping (Bool) -> Void) {
+    func load(urlSession: URLSession = URLSession.shared, withCompletion completion: @escaping (Bool) -> Void) {
         guard let url = URL(string: appConfigUrl) else {
             print("Invalid URL")
             return
         }
         let request = URLRequest(url: url)
-        URLSession.shared.dataTask(with: request) { data, _, error in
+        urlSession.dataTask(with: request) { data, _, error in
             if let data = data {
                 if let decodedResponse = try? JSONDecoder().decode(Response.self, from: data) {
                     DispatchQueue.main.async {
