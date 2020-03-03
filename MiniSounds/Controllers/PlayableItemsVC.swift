@@ -9,6 +9,21 @@
 import UIKit
 
 class PlayableItemsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    var playableItems: [Playable]
+
+    enum Cells: String {
+        case playableItemCell
+    }
+
+    init(playableItems: [Playable]) {
+        self.playableItems = playableItems
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     var tableView = UITableView()
 
     override func viewDidLoad() {
@@ -21,6 +36,7 @@ class PlayableItemsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         view.addSubview(tableView)
         setTableViewDelegates()
         tableView.rowHeight = 100
+        tableView.register(PlayableItemCell.self, forCellReuseIdentifier: Cells.playableItemCell.rawValue)
         tableView.pin(to: view)
     }
 
@@ -30,10 +46,13 @@ class PlayableItemsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        playableItems.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: Cells.playableItemCell.rawValue) as! PlayableItemCell
+        let playable = playableItems[indexPath.row]
+        cell.set(playable: playable)
+        return cell
     }
 }

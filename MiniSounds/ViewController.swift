@@ -56,7 +56,7 @@ class ViewController: UIViewController {
     }
 
     @objc func nextButtonTapped() {
-        let nextScreen = PlayableItemsVC()
+        let nextScreen = PlayableItemsVC(playableItems: config.playable)
         nextScreen.title = "Podcasts"
         navigationController?.pushViewController(nextScreen, animated: true)
     }

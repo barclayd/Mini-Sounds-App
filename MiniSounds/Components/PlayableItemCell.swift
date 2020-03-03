@@ -19,10 +19,17 @@ class PlayableItemCell: UITableViewCell {
         
         configureImageView()
         configureTitleLabel()
+        setImageConstraints()
+        setTitleLabelConstraints()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func set(playable: Playable) {
+        itemImageView.image = UIImage(named: "sounds")
+        itemTitleLabel.text = playable.titles.primary
     }
     
     func configureImageView() {
@@ -44,10 +51,10 @@ class PlayableItemCell: UITableViewCell {
     }
     
     func setTitleLabelConstraints() {
-        itemImageView.translatesAutoresizingMaskIntoConstraints = false
-        itemImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        itemImageView.leadingAnchor.constraint(equalTo: itemImageView.trailingAnchor, constant: 20).isActive = true
-        itemImageView.heightAnchor.constraint(equalToConstant: 80).isActive = true
-        itemImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12).isActive = true
+        itemTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        itemTitleLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        itemTitleLabel.leadingAnchor.constraint(equalTo: itemImageView.trailingAnchor, constant: 20).isActive = true
+        itemTitleLabel.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        itemTitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12).isActive = true
     }
 }
