@@ -9,6 +9,10 @@
 import Foundation
 import UIKit
 
+enum ConfigError: Error {
+    case runtimeError(String)
+}
+
 struct Response: Codable {
     var status: Status
     var rmsConfig: RMSConfig
@@ -30,12 +34,17 @@ struct RMSConfig: Codable {
 class Config {
     var status: Status!
     var rms: RMSConfig!
+    var appConfigUrl = "https://iplayer-radio-mobile-appconfig.files.bbci.co.uk/appconfig/cap/ios/1.6.0/config.json"
 
     var showUpdateAlert: Bool {
         !(self.status?.isOn ?? true)
     }
 
-    init() {}
+    let urlSession: URLSession
+
+    init(urlSession: URLSession = URLSession.shared) {
+        self.urlSession = urlSession
+    }
 
     func handleAlertPress() {
         if let url = URL(string: self.status.appStoreUrl) {
@@ -54,7 +63,7 @@ class Config {
     }
 
     func load(withCompletion completion: @escaping (Bool) -> Void) {
-        guard let url = URL(string: "https://iplayer-radio-mobile-appconfig.files.bbci.co.uk/appconfig/cap/ios/1.5.0/config.json") else {
+        guard let url = URL(string: appConfigUrl) else {
             print("Invalid URL")
             return
         }

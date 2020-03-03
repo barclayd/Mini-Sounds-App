@@ -17,6 +17,10 @@
 		ACF222A9240D077B00E6E065 /* MiniSoundsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF222A8240D077B00E6E065 /* MiniSoundsUITests.swift */; };
 		ACF222B8240D2F0E00E6E065 /* SecondScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF222B7240D2F0E00E6E065 /* SecondScreen.swift */; };
 		ACF222BB240D34AC00E6E065 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF222BA240D34AC00E6E065 /* Config.swift */; };
+		ACF222BD240D581F00E6E065 /* configTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF222BC240D581F00E6E065 /* configTests.swift */; };
+		ACF222C0240D59AF00E6E065 /* URLProtocolSub.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF222BF240D59AF00E6E065 /* URLProtocolSub.swift */; };
+		ACF222C5240D610100E6E065 /* configMock.json in Resources */ = {isa = PBXBuildFile; fileRef = ACF222C4240D610100E6E065 /* configMock.json */; };
+		ACF222C8240D619200E6E065 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF222C7240D619200E6E065 /* Bundle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,10 @@
 		ACF222AA240D077B00E6E065 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACF222B7240D2F0E00E6E065 /* SecondScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondScreen.swift; sourceTree = "<group>"; };
 		ACF222BA240D34AC00E6E065 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		ACF222BC240D581F00E6E065 /* configTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = configTests.swift; sourceTree = "<group>"; };
+		ACF222BF240D59AF00E6E065 /* URLProtocolSub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolSub.swift; sourceTree = "<group>"; };
+		ACF222C4240D610100E6E065 /* configMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = configMock.json; sourceTree = "<group>"; };
+		ACF222C7240D619200E6E065 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +111,7 @@
 		ACF22285240D077900E6E065 /* MiniSounds */ = {
 			isa = PBXGroup;
 			children = (
+				ACF222C6240D618600E6E065 /* Extensions */,
 				ACF222B9240D340800E6E065 /* Models */,
 				ACF222B6240D2EF400E6E065 /* Screens */,
 				ACF22286240D077900E6E065 /* AppDelegate.swift */,
@@ -119,8 +128,11 @@
 		ACF2229C240D077B00E6E065 /* MiniSoundsTests */ = {
 			isa = PBXGroup;
 			children = (
+				ACF222C1240D60B500E6E065 /* MockData */,
+				ACF222BE240D599B00E6E065 /* Stubs */,
 				ACF2229D240D077B00E6E065 /* MiniSoundsTests.swift */,
 				ACF2229F240D077B00E6E065 /* Info.plist */,
+				ACF222BC240D581F00E6E065 /* configTests.swift */,
 			);
 			path = MiniSoundsTests;
 			sourceTree = "<group>";
@@ -148,6 +160,30 @@
 				ACF222BA240D34AC00E6E065 /* Config.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		ACF222BE240D599B00E6E065 /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				ACF222BF240D59AF00E6E065 /* URLProtocolSub.swift */,
+			);
+			path = Stubs;
+			sourceTree = "<group>";
+		};
+		ACF222C1240D60B500E6E065 /* MockData */ = {
+			isa = PBXGroup;
+			children = (
+				ACF222C4240D610100E6E065 /* configMock.json */,
+			);
+			path = MockData;
+			sourceTree = "<group>";
+		};
+		ACF222C6240D618600E6E065 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				ACF222C7240D619200E6E065 /* Bundle.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +300,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACF222C5240D610100E6E065 /* configMock.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACF2228B240D077900E6E065 /* ViewController.swift in Sources */,
+				ACF222C8240D619200E6E065 /* Bundle.swift in Sources */,
 				ACF222B8240D2F0E00E6E065 /* SecondScreen.swift in Sources */,
 				ACF222BB240D34AC00E6E065 /* Config.swift in Sources */,
 				ACF22287240D077900E6E065 /* AppDelegate.swift in Sources */,
@@ -293,7 +331,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACF222C0240D59AF00E6E065 /* URLProtocolSub.swift in Sources */,
 				ACF2229E240D077B00E6E065 /* MiniSoundsTests.swift in Sources */,
+				ACF222BD240D581F00E6E065 /* configTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
