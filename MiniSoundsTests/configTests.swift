@@ -104,7 +104,11 @@ class configTests: XCTestCase {
         return URLSession(configuration: configuration)
     }
 
-    func testUpdateAlertIstrueWhenisOnIsFalse() {
+    func setRMS() {
+        config.rms = RMSConfig(apiKey: "mock-api-key", rootUrl: "https://mock-rms-api.bbc.co.uk")
+    }
+
+    func testUpdateAlertIsTrueWhenisOnIsFalse() {
         config.load(urlSession: generateURLSessionMock(jsonString: mockRMSResponse(isOn: false))) { success in
             if success {
                 XCTAssertTrue(self.config.showUpdateAlert)
@@ -191,7 +195,7 @@ class configTests: XCTestCase {
     }
 
     func testLoadsPlayableItemsWhenRootUrlAndApiKeyAreSet() {
-        config.rms = RMSConfig(apiKey: "mock-api-key", rootUrl: "https://mock-rms-api.bbc.co.uk")
+        setRMS()
         config.getPlayableItems(urlSession: generateURLSessionMock(url: URL(string: config.playableItemsUrl), jsonString: mockPlayableItemsResponse())) { success in
             if success {
                 XCTAssertTrue(success)
@@ -200,7 +204,128 @@ class configTests: XCTestCase {
         }
         wait(for: [expectation], timeout: 1.0)
     }
-    
+
+    func testLoadsPlayableItemsWithTheCorrectImageUrl() {
+        setRMS()
+        config.getPlayableItems(urlSession: generateURLSessionMock(url: URL(string: config.playableItemsUrl), jsonString: mockPlayableItemsResponse())) { success in
+            if success {
+                XCTAssertEqual(self.config.playable[0].image_url, "https://ichef.bbci.co.uk/images/ic/{recipe}/p074608w.jpg")
+            }
+            self.expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 1.0)
+    }
+
+    func testLoadsPlayableItemsWithTheCorrectDurationLabel() {
+        setRMS()
+        config.getPlayableItems(urlSession: generateURLSessionMock(url: URL(string: config.playableItemsUrl), jsonString: mockPlayableItemsResponse())) { success in
+            if success {
+                XCTAssertEqual(self.config.playable[0].duration.label, "165 mins")
+            }
+            self.expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 1.0)
+    }
+
+    func testLoadsPlayableItemsWithTheCorrectType() {
+        setRMS()
+        config.getPlayableItems(urlSession: generateURLSessionMock(url: URL(string: config.playableItemsUrl), jsonString: mockPlayableItemsResponse())) { success in
+            if success {
+                XCTAssertEqual(self.config.playable[0].type, "playable_item")
+            }
+            self.expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 1.0)
+    }
+
+    func testLoadsPlayableItemsWithTheCorrectPrimaryTitle() {
+        setRMS()
+        config.getPlayableItems(urlSession: generateURLSessionMock(url: URL(string: config.playableItemsUrl), jsonString: mockPlayableItemsResponse())) { success in
+            if success {
+                XCTAssertEqual(self.config.playable[0].titles.primary, "Clara Amfo")
+            }
+            self.expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 1.0)
+    }
+
+    func testLoadsPlayableItemsWithTheCorrectSecondaryTitle() {
+        setRMS()
+        config.getPlayableItems(urlSession: generateURLSessionMock(url: URL(string: config.playableItemsUrl), jsonString: mockPlayableItemsResponse())) { success in
+            if success {
+                XCTAssertEqual(self.config.playable[0].titles.secondary, "10:00 - 12:45")
+            }
+            self.expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 1.0)
+    }
+
+    func testLoadsPlayableItemsWithTheCorrectTertiaryTitle() {
+        setRMS()
+        config.getPlayableItems(urlSession: generateURLSessionMock(url: URL(string: config.playableItemsUrl), jsonString: mockPlayableItemsResponse())) { success in
+            if success {
+                XCTAssertEqual(self.config.playable[0].titles.tertiary, "03/03/2020")
+            }
+            self.expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 1.0)
+    }
+
+    func testLoadsPlayableItemsWithTheCorrectId() {
+        setRMS()
+        config.getPlayableItems(urlSession: generateURLSessionMock(url: URL(string: config.playableItemsUrl), jsonString: mockPlayableItemsResponse())) { success in
+            if success {
+                XCTAssertEqual(self.config.playable[0].id, "bbc_radio_one")
+            }
+            self.expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 1.0)
+    }
+
+    func testLoadsPlayableItemsWithTheCorrectNetworkId() {
+        setRMS()
+        config.getPlayableItems(urlSession: generateURLSessionMock(url: URL(string: config.playableItemsUrl), jsonString: mockPlayableItemsResponse())) { success in
+            if success {
+                XCTAssertEqual(self.config.playable[0].network.id, "bbc_radio_one")
+            }
+            self.expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 1.0)
+    }
+
+    func testLoadsPlayableItemsWithTheCorrectNetworkKey() {
+        setRMS()
+        config.getPlayableItems(urlSession: generateURLSessionMock(url: URL(string: config.playableItemsUrl), jsonString: mockPlayableItemsResponse())) { success in
+            if success {
+                XCTAssertEqual(self.config.playable[0].network.key, "radio1")
+            }
+            self.expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 1.0)
+    }
+
+    func testLoadsPlayableItemsWithTheCorrectNetworkLogoURL() {
+        setRMS()
+        config.getPlayableItems(urlSession: generateURLSessionMock(url: URL(string: config.playableItemsUrl), jsonString: mockPlayableItemsResponse())) { success in
+            if success {
+                XCTAssertEqual(self.config.playable[0].network.logo_url, "https://sounds.files.bbci.co.uk/2.2.4/networks/bbc_radio_one/{type}_{size}.{format}")
+            }
+            self.expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 1.0)
+    }
+
+    func testLoadsPlayableItemsWithTheCorrectNetworkShortTitle() {
+        setRMS()
+        config.getPlayableItems(urlSession: generateURLSessionMock(url: URL(string: config.playableItemsUrl), jsonString: mockPlayableItemsResponse())) { success in
+            if success {
+                XCTAssertEqual(self.config.playable[0].network.short_title, "Radio 1")
+            }
+            self.expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 1.0)
+    }
+
     func testCannotLoadPlayableItemsWhenRootUrlAndApiKeyAreNotSet() {
         config.getPlayableItems(urlSession: generateURLSessionMock(url: URL(string: config.playableItemsUrl), jsonString: mockPlayableItemsResponse())) { success in
             if success {
@@ -211,7 +336,7 @@ class configTests: XCTestCase {
         wait(for: [expectation], timeout: 1.0)
     }
 
-    func testCorrectPlayableItemsUrlIsGenerated() {
+    func testCorrectPlayableItemsUrlIsGeneratedWhenARootUrlIsSupplied() {
         let rootUrl = "https://mock-rms-api.bbc.co.uk"
         config.rms = RMSConfig(apiKey: "mock-api-key", rootUrl: rootUrl)
         XCTAssertEqual(config.playableItemsUrl, "\(rootUrl)/v2/networks/playable?promoted=true")
