@@ -36,7 +36,7 @@ class ViewController: UIViewController {
             }
         }
 
-        view.backgroundColor = .red
+        view.backgroundColor = UIColor(hex: "#ff4900")?.withAlphaComponent(0.5)
     }
 
     func showUpdateAlert() {
