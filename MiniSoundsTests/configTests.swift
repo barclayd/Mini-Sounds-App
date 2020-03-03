@@ -194,10 +194,28 @@ class configTests: XCTestCase {
         config.rms = RMSConfig(apiKey: "mock-api-key", rootUrl: "https://mock-rms-api.bbc.co.uk")
         config.getPlayableItems(urlSession: generateURLSessionMock(url: URL(string: config.playableItemsUrl), jsonString: mockPlayableItemsResponse())) { success in
             if success {
-                XCTAssertEqual(self.config.playable[0].image_url, "https://ichef.bbci.co.uk/images/ic/{recipe}/p074608w.jpg")
+                XCTAssertTrue(success)
             }
             self.expectation.fulfill()
         }
+        wait(for: [expectation], timeout: 1.0)
+    }
+    
+    func testCannotLoadPlayableItemsWhenRootUrlAndApiKeyAreNotSet() {
+        config.getPlayableItems(urlSession: generateURLSessionMock(url: URL(string: config.playableItemsUrl), jsonString: mockPlayableItemsResponse())) { success in
+            if success {
+                XCTAssertFalse(success)
+            }
+            self.expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 1.0)
+    }
+
+    func testCorrectPlayableItemsUrlIsGenerated() {
+        let rootUrl = "https://mock-rms-api.bbc.co.uk"
+        config.rms = RMSConfig(apiKey: "mock-api-key", rootUrl: rootUrl)
+        XCTAssertEqual(config.playableItemsUrl, "\(rootUrl)/v2/networks/playable?promoted=true")
+        expectation.fulfill()
         wait(for: [expectation], timeout: 1.0)
     }
 }

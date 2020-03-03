@@ -119,7 +119,12 @@ class Config {
             return
         }
         let request = URLRequest(url: url)
-        urlSession.configuration.httpAdditionalHeaders = ["x-api-key": "\(self.rms.apiKey)"]
+        guard let apiKey = self.rms?.apiKey else {
+            print("No api key provided")
+            completion(false)
+            return
+        }
+        urlSession.configuration.httpAdditionalHeaders = ["x-api-key": apiKey]
         urlSession.dataTask(with: request) { data, _, error in
             if let data = data {
                 if let decodedResponse = try? JSONDecoder().decode(PlayableResponse.self, from: data) {
