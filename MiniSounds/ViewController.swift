@@ -58,9 +58,11 @@ class ViewController: UIViewController {
     }
 
     @objc func nextButtonTapped() {
-        let nextScreen = PlayableItemsVC(playableItems: config.playable)
-        nextScreen.title = "Podcasts"
-        navigationController?.pushViewController(nextScreen, animated: true)
+        if config.playable.count > 0 {
+            let nextScreen = PlayableItemsVC(playableItems: config.playable)
+            nextScreen.title = "Podcasts"
+            navigationController?.pushViewController(nextScreen, animated: true)
+        }
     }
 
     func setupNextButtonConstraints() {
