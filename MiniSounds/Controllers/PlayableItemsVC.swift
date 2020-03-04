@@ -55,7 +55,7 @@ class PlayableItemsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
             refreshControl.tintColor = .orange
 
             let pullToRefreshMessage = "Retuning your set..."
-            let refreshWheelAttribute = [NSAttributedString.Key.foregroundColor: UIColor.orange]
+            let refreshWheelAttribute = [NSAttributedString.Key.foregroundColor: UIColor.soundsOrange]
             let pullToRefreshAttributes = NSAttributedString(string: pullToRefreshMessage, attributes: refreshWheelAttribute)
 
             refreshControl.attributedTitle = pullToRefreshAttributes

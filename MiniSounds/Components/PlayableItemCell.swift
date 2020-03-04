@@ -37,7 +37,7 @@ class PlayableItemCell: UITableViewCell {
         itemTitleLabel.text = playable.titles.primary
         itemTitleLabel.font = UIFont.boldSystemFont(ofSize: 18)
         itemsSubtitleLabel.text = playable.network.short_title
-        itemsSubtitleLabel.textColor = .blue
+        itemsSubtitleLabel.textColor = UIColor.soundsOrange
     }
     
     func configureImageView() {

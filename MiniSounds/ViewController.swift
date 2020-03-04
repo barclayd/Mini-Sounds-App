@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         setUpNextButton()
         loadConfig()
-        view.backgroundColor = UIColor(hex: "#ff4900")?.withAlphaComponent(0.5)
+        view.backgroundColor = UIColor.soundsOrange.withAlphaComponent(0.5)
     }
 
     func loadConfig() {
