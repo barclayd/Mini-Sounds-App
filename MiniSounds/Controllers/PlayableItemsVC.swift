@@ -29,6 +29,8 @@ class PlayableItemsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
+
+        navigationItem.largeTitleDisplayMode = .never
         // Do any additional setup after loading the view.
     }
 

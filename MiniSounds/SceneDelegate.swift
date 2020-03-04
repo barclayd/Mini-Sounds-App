@@ -19,6 +19,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let firstScreen = ViewController()
         firstScreen.title = "miniSounds"
         let navigationController = UINavigationController(rootViewController: firstScreen)
+        navigationController.navigationBar.prefersLargeTitles = true
+        navigationController.navigationBar.tintColor = .black
+        
+        navigationController.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.orange]
 
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: UIScreen.main.bounds)

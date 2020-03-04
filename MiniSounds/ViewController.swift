@@ -47,7 +47,9 @@ class ViewController: UIViewController {
 
     func setUpNextButton() {
         nextButton.backgroundColor = .white
-        nextButton.setTitleColor(.blue, for: .normal)
+        nextButton.layer.cornerRadius = 10
+        nextButton.clipsToBounds = true
+        nextButton.setTitleColor(.orange, for: .normal)
         nextButton.setTitle("Podcasts", for: .normal)
         nextButton.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
 
@@ -63,8 +65,8 @@ class ViewController: UIViewController {
 
     func setupNextButtonConstraints() {
         nextButton.translatesAutoresizingMaskIntoConstraints = false
-        nextButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
-        nextButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
+        nextButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50).isActive = true
+        nextButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50).isActive = true
         nextButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         nextButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
