@@ -34,7 +34,7 @@ class ViewController: UIViewController {
             } else {
                 self.config.getPlayableItems { success in
                     if success {
-                        print(self.config.playable[0].network.logo_url)
+                        print("successfully loaded items")
                     }
                 }
             }
@@ -59,7 +59,7 @@ class ViewController: UIViewController {
 
     @objc func nextButtonTapped() {
         if config.playable.count > 0 {
-            let nextScreen = PlayableItemsVC(playableItems: config.playable)
+            let nextScreen = PlayableItemsVC(config: config)
             nextScreen.title = "Podcasts"
             navigationController?.pushViewController(nextScreen, animated: true)
         }
