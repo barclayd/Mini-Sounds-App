@@ -57,4 +57,11 @@ class PlayableItemsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         cell.set(playable: playable)
         return cell
     }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let playable = playableItems[indexPath.row]
+        let nextScreen = SecondScreen()
+        nextScreen.title = playable.titles.primary
+        navigationController?.pushViewController(nextScreen, animated: true)
+    }
 }
