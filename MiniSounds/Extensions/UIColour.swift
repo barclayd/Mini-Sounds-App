@@ -34,4 +34,6 @@ extension UIColor {
 
         return nil
     }
+    
+    static let soundsOrange = UIColor(hex: "#ff4900")
 }

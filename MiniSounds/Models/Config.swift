@@ -53,6 +53,12 @@ struct PlayableResponse: Codable {
 }
 
 struct Playable: Codable {
+    let iChefRecipe = "320x180"
+
+    var iChefUrl: URL? {
+        URL(string: image_url.replacingOccurrences(of: "{recipe}", with: iChefRecipe))
+    }
+
     var type: String
     var id: String
     var network: Network
@@ -68,11 +74,11 @@ class Config {
     let appConfigUrl = "https://iplayer-radio-mobile-appconfig.files.bbci.co.uk/appconfig/cap/ios/1.6.0/config.json"
 
     var showUpdateAlert: Bool {
-        !(self.status?.isOn ?? true)
+        !(status?.isOn ?? true)
     }
 
     var playableItemsUrl: String {
-        "\(self.rms?.rootUrl ?? "")/v2/networks/playable?promoted=true"
+        "\(rms?.rootUrl ?? "")/v2/networks/playable?promoted=true"
     }
 
     func handleAlertPress() {

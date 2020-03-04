@@ -6,6 +6,7 @@
 //  Copyright © 2020 Daniel Barclay. All rights reserved.
 //
 
+import Kingfisher
 import UIKit
 
 class PlayableItemCell: UITableViewCell {
@@ -32,9 +33,9 @@ class PlayableItemCell: UITableViewCell {
     }
     
     func set(playable: Playable) {
-        itemImageView.image = UIImage(named: "sounds")
+        itemImageView.kf.setImage(with: playable.iChefUrl, placeholder: UIImage(named: "sounds"))
         itemTitleLabel.text = playable.titles.primary
-        itemTitleLabel.font = UIFont.boldSystemFont(ofSize: 16)
+        itemTitleLabel.font = UIFont.boldSystemFont(ofSize: 18)
         itemsSubtitleLabel.text = playable.network.short_title
         itemsSubtitleLabel.textColor = .blue
     }
