@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F37ACC7D904C8A5ED5AEC77 /* Pods_MiniSoundsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA4711E6895E3726C2FD4A96 /* Pods_MiniSoundsTests.framework */; };
+		767C1AAF163212F8F42A8DC8 /* Pods_MiniSounds_MiniSoundsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D77E1AE633B709E7A5E6A3 /* Pods_MiniSounds_MiniSoundsUITests.framework */; };
+		A40089E7B1CCEE8175B69632 /* Pods_MiniSounds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86CB48880724387F0B83DB69 /* Pods_MiniSounds.framework */; };
 		AC9917CF240E7BF600852F9C /* UIColour.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9917CE240E7BF600852F9C /* UIColour.swift */; };
 		AC9917D1240E7C7B00852F9C /* AutoLayoutConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9917D0240E7C7B00852F9C /* AutoLayoutConstraints.swift */; };
 		AC9917D4240E7E3A00852F9C /* PlayableItemsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9917D3240E7E3A00852F9C /* PlayableItemsVC.swift */; };
 		AC9917D7240E813700852F9C /* PlayableItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9917D6240E813700852F9C /* PlayableItemCell.swift */; };
-		ACC0903F240FB31E005E79D1 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = ACC0903E240FB31E005E79D1 /* Kingfisher */; };
+		ACC0903F240FB31E005E79D1 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = ACC0903E240FB31E005E79D1 /* SwiftPackageProductDependency */; };
 		ACF22287240D077900E6E065 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF22286240D077900E6E065 /* AppDelegate.swift */; };
 		ACF22289240D077900E6E065 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF22288240D077900E6E065 /* SceneDelegate.swift */; };
 		ACF2228B240D077900E6E065 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF2228A240D077900E6E065 /* ViewController.swift */; };
@@ -45,6 +48,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0FBE5EFA6F62C2057959F2A8 /* Pods-MiniSounds.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniSounds.release.xcconfig"; path = "Target Support Files/Pods-MiniSounds/Pods-MiniSounds.release.xcconfig"; sourceTree = "<group>"; };
+		16D77E1AE633B709E7A5E6A3 /* Pods_MiniSounds_MiniSoundsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MiniSounds_MiniSoundsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2975A56622B3C9DA41BECB61 /* Pods-MiniSounds-MiniSoundsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniSounds-MiniSoundsUITests.debug.xcconfig"; path = "Target Support Files/Pods-MiniSounds-MiniSoundsUITests/Pods-MiniSounds-MiniSoundsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2FE43A233A1D6104E405799A /* Pods-MiniSoundsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniSoundsTests.debug.xcconfig"; path = "Target Support Files/Pods-MiniSoundsTests/Pods-MiniSoundsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6E0812BB3024D916A7B717A9 /* Pods-MiniSounds.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniSounds.debug.xcconfig"; path = "Target Support Files/Pods-MiniSounds/Pods-MiniSounds.debug.xcconfig"; sourceTree = "<group>"; };
+		7319814343FB7968104F6EB1 /* Pods-MiniSoundsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniSoundsTests.release.xcconfig"; path = "Target Support Files/Pods-MiniSoundsTests/Pods-MiniSoundsTests.release.xcconfig"; sourceTree = "<group>"; };
+		86CB48880724387F0B83DB69 /* Pods_MiniSounds.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MiniSounds.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA4711E6895E3726C2FD4A96 /* Pods_MiniSoundsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MiniSoundsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC9917CE240E7BF600852F9C /* UIColour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColour.swift; sourceTree = "<group>"; };
 		AC9917D0240E7C7B00852F9C /* AutoLayoutConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLayoutConstraints.swift; sourceTree = "<group>"; };
 		AC9917D3240E7E3A00852F9C /* PlayableItemsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayableItemsVC.swift; sourceTree = "<group>"; };
@@ -68,6 +79,7 @@
 		ACF222BC240D581F00E6E065 /* configTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = configTests.swift; sourceTree = "<group>"; };
 		ACF222BF240D59AF00E6E065 /* URLProtocolSub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolSub.swift; sourceTree = "<group>"; };
 		ACF222C7240D619200E6E065 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
+		F67858D2A0868A6517F89D8F /* Pods-MiniSounds-MiniSoundsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniSounds-MiniSoundsUITests.release.xcconfig"; path = "Target Support Files/Pods-MiniSounds-MiniSoundsUITests/Pods-MiniSounds-MiniSoundsUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +87,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACC0903F240FB31E005E79D1 /* Kingfisher in Frameworks */,
+				ACC0903F240FB31E005E79D1 /* BuildFile in Frameworks */,
+				A40089E7B1CCEE8175B69632 /* Pods_MiniSounds.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F37ACC7D904C8A5ED5AEC77 /* Pods_MiniSoundsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,12 +104,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				767C1AAF163212F8F42A8DC8 /* Pods_MiniSounds_MiniSoundsUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		45721E4FF9FC74E90915666B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6E0812BB3024D916A7B717A9 /* Pods-MiniSounds.debug.xcconfig */,
+				0FBE5EFA6F62C2057959F2A8 /* Pods-MiniSounds.release.xcconfig */,
+				2975A56622B3C9DA41BECB61 /* Pods-MiniSounds-MiniSoundsUITests.debug.xcconfig */,
+				F67858D2A0868A6517F89D8F /* Pods-MiniSounds-MiniSoundsUITests.release.xcconfig */,
+				2FE43A233A1D6104E405799A /* Pods-MiniSoundsTests.debug.xcconfig */,
+				7319814343FB7968104F6EB1 /* Pods-MiniSoundsTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		AC9917D2240E7E0200852F9C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +148,8 @@
 				ACF2229C240D077B00E6E065 /* MiniSoundsTests */,
 				ACF222A7240D077B00E6E065 /* MiniSoundsUITests */,
 				ACF22284240D077900E6E065 /* Products */,
+				45721E4FF9FC74E90915666B /* Pods */,
+				CFA8A74B369A8396D86A1154 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -205,6 +236,16 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		CFA8A74B369A8396D86A1154 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				86CB48880724387F0B83DB69 /* Pods_MiniSounds.framework */,
+				16D77E1AE633B709E7A5E6A3 /* Pods_MiniSounds_MiniSoundsUITests.framework */,
+				AA4711E6895E3726C2FD4A96 /* Pods_MiniSoundsTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -212,9 +253,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ACF222AD240D077B00E6E065 /* Build configuration list for PBXNativeTarget "MiniSounds" */;
 			buildPhases = (
+				88AB2825ED98786BF2DAD231 /* [CP] Check Pods Manifest.lock */,
 				ACF2227F240D077900E6E065 /* Sources */,
 				ACF22280240D077900E6E065 /* Frameworks */,
 				ACF22281240D077900E6E065 /* Resources */,
+				D36B4AEB5A31F7CED3925006 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -222,7 +265,7 @@
 			);
 			name = MiniSounds;
 			packageProductDependencies = (
-				ACC0903E240FB31E005E79D1 /* Kingfisher */,
+				ACC0903E240FB31E005E79D1 /* SwiftPackageProductDependency */,
 			);
 			productName = MiniSounds;
 			productReference = ACF22283240D077900E6E065 /* MiniSounds.app */;
@@ -232,6 +275,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ACF222B0240D077B00E6E065 /* Build configuration list for PBXNativeTarget "MiniSoundsTests" */;
 			buildPhases = (
+				DC4DFA09C7BF6DD8DB3E5E91 /* [CP] Check Pods Manifest.lock */,
 				ACF22295240D077B00E6E065 /* Sources */,
 				ACF22296240D077B00E6E065 /* Frameworks */,
 				ACF22297240D077B00E6E065 /* Resources */,
@@ -250,9 +294,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ACF222B3240D077B00E6E065 /* Build configuration list for PBXNativeTarget "MiniSoundsUITests" */;
 			buildPhases = (
+				6AC255A7DEA87BFF73CB5DDD /* [CP] Check Pods Manifest.lock */,
 				ACF222A0240D077B00E6E065 /* Sources */,
 				ACF222A1240D077B00E6E065 /* Frameworks */,
 				ACF222A2240D077B00E6E065 /* Resources */,
+				F2B33347E8C2AC01029FC40B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -297,7 +343,7 @@
 			);
 			mainGroup = ACF2227A240D077900E6E065;
 			packageReferences = (
-				ACC0903D240FB31E005E79D1 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				ACC0903D240FB31E005E79D1 /* RemoteSwiftPackageReference */,
 			);
 			productRefGroup = ACF22284240D077900E6E065 /* Products */;
 			projectDirPath = "";
@@ -336,6 +382,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6AC255A7DEA87BFF73CB5DDD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MiniSounds-MiniSoundsUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		88AB2825ED98786BF2DAD231 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MiniSounds-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D36B4AEB5A31F7CED3925006 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MiniSounds/Pods-MiniSounds-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MiniSounds/Pods-MiniSounds-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MiniSounds/Pods-MiniSounds-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DC4DFA09C7BF6DD8DB3E5E91 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MiniSoundsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F2B33347E8C2AC01029FC40B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MiniSounds-MiniSoundsUITests/Pods-MiniSounds-MiniSoundsUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MiniSounds-MiniSoundsUITests/Pods-MiniSounds-MiniSoundsUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MiniSounds-MiniSoundsUITests/Pods-MiniSounds-MiniSoundsUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		ACF2227F240D077900E6E065 /* Sources */ = {
@@ -524,6 +673,7 @@
 		};
 		ACF222AE240D077B00E6E065 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E0812BB3024D916A7B717A9 /* Pods-MiniSounds.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -542,6 +692,7 @@
 		};
 		ACF222AF240D077B00E6E065 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0FBE5EFA6F62C2057959F2A8 /* Pods-MiniSounds.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -560,6 +711,7 @@
 		};
 		ACF222B1240D077B00E6E065 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FE43A233A1D6104E405799A /* Pods-MiniSoundsTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -582,6 +734,7 @@
 		};
 		ACF222B2240D077B00E6E065 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7319814343FB7968104F6EB1 /* Pods-MiniSoundsTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -604,6 +757,7 @@
 		};
 		ACF222B4240D077B00E6E065 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2975A56622B3C9DA41BECB61 /* Pods-MiniSounds-MiniSoundsUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -624,6 +778,7 @@
 		};
 		ACF222B5240D077B00E6E065 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F67858D2A0868A6517F89D8F /* Pods-MiniSounds-MiniSoundsUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -684,7 +839,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		ACC0903D240FB31E005E79D1 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+		ACC0903D240FB31E005E79D1 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
 			requirement = {
@@ -695,9 +850,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		ACC0903E240FB31E005E79D1 /* Kingfisher */ = {
+		ACC0903E240FB31E005E79D1 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = ACC0903D240FB31E005E79D1 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			package = ACC0903D240FB31E005E79D1 /* RemoteSwiftPackageReference */;
 			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */

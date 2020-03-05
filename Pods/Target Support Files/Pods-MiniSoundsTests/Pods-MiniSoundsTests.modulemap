@@ -1,0 +1,6 @@
+framework module Pods_MiniSoundsTests {
+  umbrella header "Pods-MiniSoundsTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
