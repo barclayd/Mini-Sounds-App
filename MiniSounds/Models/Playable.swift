@@ -9,12 +9,7 @@
 import Foundation
 
 struct Playable: Codable {
-    let iChefRecipe = "320x180"
-
-    var iChefUrl: URL? {
-        URL(string: image_url.replacingOccurrences(of: "{recipe}", with: iChefRecipe))
-    }
-
+    
     var type: String
     var id: String
     var network: Network
