@@ -30,7 +30,6 @@
 		ACF222BB240D34AC00E6E065 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF222BA240D34AC00E6E065 /* Config.swift */; };
 		ACF222BD240D581F00E6E065 /* configTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF222BC240D581F00E6E065 /* configTests.swift */; };
 		ACF222C0240D59AF00E6E065 /* URLProtocolSub.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF222BF240D59AF00E6E065 /* URLProtocolSub.swift */; };
-		ACF222C8240D619200E6E065 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF222C7240D619200E6E065 /* Bundle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,7 +83,6 @@
 		ACF222BA240D34AC00E6E065 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		ACF222BC240D581F00E6E065 /* configTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = configTests.swift; sourceTree = "<group>"; };
 		ACF222BF240D59AF00E6E065 /* URLProtocolSub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolSub.swift; sourceTree = "<group>"; };
-		ACF222C7240D619200E6E065 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		F67858D2A0868A6517F89D8F /* Pods-MiniSounds-MiniSoundsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniSounds-MiniSoundsUITests.release.xcconfig"; path = "Target Support Files/Pods-MiniSounds-MiniSoundsUITests/Pods-MiniSounds-MiniSoundsUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -245,7 +243,6 @@
 		ACF222C6240D618600E6E065 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				ACF222C7240D619200E6E065 /* Bundle.swift */,
 				AC9917CE240E7BF600852F9C /* UIColour.swift */,
 				AC9917D0240E7C7B00852F9C /* AutoLayoutConstraints.swift */,
 			);
@@ -509,7 +506,6 @@
 			files = (
 				ACB5D86C241637930057FCF0 /* ConfigViewModel.swift in Sources */,
 				ACF2228B240D077900E6E065 /* ViewController.swift in Sources */,
-				ACF222C8240D619200E6E065 /* Bundle.swift in Sources */,
 				AC9917CF240E7BF600852F9C /* UIColour.swift in Sources */,
 				AC9917D4240E7E3A00852F9C /* PlayableItemsVC.swift in Sources */,
 				ACB5D87024164A890057FCF0 /* PlayableViewModel.swift in Sources */,
