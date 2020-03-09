@@ -13,7 +13,7 @@ struct PullToRefresh {
     var text: String
     var textColour: [NSAttributedString.Key : UIColor]
     var wheelColour: UIColor = .soundsOrange
-    var atrributes: NSAttributedString {
+    var attributes: NSAttributedString {
         NSAttributedString(string: text, attributes: textColour)
     }
 }

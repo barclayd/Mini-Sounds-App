@@ -33,10 +33,6 @@ class PlayerScreen: UIViewController {
 }
 
 class AVStatisticsConsumer: NSObject, BBCSMPAVStatisticsConsumer {
-    override func `self`() -> Self {
-        return self
-    }
-    
     func trackAVSessionStart(itemMetadata: BBCSMPItemMetadata!) {}
     
     func trackAVFullMediaLength(lengthInSeconds mediaLengthInSeconds: Int) {}
@@ -60,28 +56,4 @@ class AVStatisticsConsumer: NSObject, BBCSMPAVStatisticsConsumer {
     func trackAVPlayerSizeChange(_ playerSize: CGSize) {}
     
     func trackAVError(_ errorString: String!, playlistTime: Int, assetTime: Int, currentLocation: Int, customParameters: [AnyHashable: Any]!) {}
-    
-    override func isEqual(_ object: Any?) -> Bool {
-        return true
-    }
-    
-    override func isProxy() -> Bool {
-        return true
-    }
-    
-    override func isKind(of aClass: AnyClass) -> Bool {
-        return true
-    }
-    
-    override func isMember(of aClass: AnyClass) -> Bool {
-        return true
-    }
-    
-    override func conforms(to aProtocol: Protocol) -> Bool {
-        return true
-    }
-    
-    override func responds(to aSelector: Selector!) -> Bool {
-        return true
-    }
 }
