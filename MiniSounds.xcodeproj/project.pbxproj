@@ -20,7 +20,7 @@
 		ACC0903F240FB31E005E79D1 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = ACC0903E240FB31E005E79D1 /* Kingfisher */; };
 		ACF22287240D077900E6E065 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF22286240D077900E6E065 /* AppDelegate.swift */; };
 		ACF22289240D077900E6E065 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF22288240D077900E6E065 /* SceneDelegate.swift */; };
-		ACF2228B240D077900E6E065 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF2228A240D077900E6E065 /* ViewController.swift */; };
+		ACF2228B240D077900E6E065 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF2228A240D077900E6E065 /* HomeView.swift */; };
 		ACF2228E240D077900E6E065 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACF2228C240D077900E6E065 /* Main.storyboard */; };
 		ACF22290240D077B00E6E065 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACF2228F240D077B00E6E065 /* Assets.xcassets */; };
 		ACF22293240D077B00E6E065 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACF22291240D077B00E6E065 /* LaunchScreen.storyboard */; };
@@ -28,7 +28,7 @@
 		ACF222A9240D077B00E6E065 /* MiniSoundsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF222A8240D077B00E6E065 /* MiniSoundsUITests.swift */; };
 		ACF222B8240D2F0E00E6E065 /* PlayerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF222B7240D2F0E00E6E065 /* PlayerScreen.swift */; };
 		ACF222BB240D34AC00E6E065 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF222BA240D34AC00E6E065 /* Config.swift */; };
-		ACF222BD240D581F00E6E065 /* configTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF222BC240D581F00E6E065 /* configTests.swift */; };
+		ACF222BD240D581F00E6E065 /* configViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF222BC240D581F00E6E065 /* configViewModelTests.swift */; };
 		ACF222C0240D59AF00E6E065 /* URLProtocolSub.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF222BF240D59AF00E6E065 /* URLProtocolSub.swift */; };
 /* End PBXBuildFile section */
 
@@ -68,7 +68,7 @@
 		ACF22283240D077900E6E065 /* MiniSounds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniSounds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACF22286240D077900E6E065 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACF22288240D077900E6E065 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		ACF2228A240D077900E6E065 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ACF2228A240D077900E6E065 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		ACF2228D240D077900E6E065 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ACF2228F240D077B00E6E065 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACF22292240D077B00E6E065 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -81,7 +81,7 @@
 		ACF222AA240D077B00E6E065 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACF222B7240D2F0E00E6E065 /* PlayerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerScreen.swift; sourceTree = "<group>"; };
 		ACF222BA240D34AC00E6E065 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
-		ACF222BC240D581F00E6E065 /* configTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = configTests.swift; sourceTree = "<group>"; };
+		ACF222BC240D581F00E6E065 /* configViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = configViewModelTests.swift; sourceTree = "<group>"; };
 		ACF222BF240D59AF00E6E065 /* URLProtocolSub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolSub.swift; sourceTree = "<group>"; };
 		F67858D2A0868A6517F89D8F /* Pods-MiniSounds-MiniSoundsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniSounds-MiniSoundsUITests.release.xcconfig"; path = "Target Support Files/Pods-MiniSounds-MiniSoundsUITests/Pods-MiniSounds-MiniSoundsUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -186,7 +186,6 @@
 				ACF222B6240D2EF400E6E065 /* Screens */,
 				ACF22286240D077900E6E065 /* AppDelegate.swift */,
 				ACF22288240D077900E6E065 /* SceneDelegate.swift */,
-				ACF2228A240D077900E6E065 /* ViewController.swift */,
 				ACF2228C240D077900E6E065 /* Main.storyboard */,
 				ACF2228F240D077B00E6E065 /* Assets.xcassets */,
 				ACF22291240D077B00E6E065 /* LaunchScreen.storyboard */,
@@ -201,7 +200,7 @@
 				ACF222BE240D599B00E6E065 /* Mocks */,
 				ACF2229D240D077B00E6E065 /* MiniSoundsTests.swift */,
 				ACF2229F240D077B00E6E065 /* Info.plist */,
-				ACF222BC240D581F00E6E065 /* configTests.swift */,
+				ACF222BC240D581F00E6E065 /* configViewModelTests.swift */,
 			);
 			path = MiniSoundsTests;
 			sourceTree = "<group>";
@@ -218,6 +217,7 @@
 		ACF222B6240D2EF400E6E065 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				ACF2228A240D077900E6E065 /* HomeView.swift */,
 				ACF222B7240D2F0E00E6E065 /* PlayerScreen.swift */,
 			);
 			path = Screens;
@@ -505,7 +505,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACB5D86C241637930057FCF0 /* ConfigViewModel.swift in Sources */,
-				ACF2228B240D077900E6E065 /* ViewController.swift in Sources */,
+				ACF2228B240D077900E6E065 /* HomeView.swift in Sources */,
 				AC9917CF240E7BF600852F9C /* UIColour.swift in Sources */,
 				AC9917D4240E7E3A00852F9C /* PlayableItemsVC.swift in Sources */,
 				ACB5D87024164A890057FCF0 /* PlayableViewModel.swift in Sources */,
@@ -525,7 +525,7 @@
 			files = (
 				ACF222C0240D59AF00E6E065 /* URLProtocolSub.swift in Sources */,
 				ACF2229E240D077B00E6E065 /* MiniSoundsTests.swift in Sources */,
-				ACF222BD240D581F00E6E065 /* configTests.swift in Sources */,
+				ACF222BD240D581F00E6E065 /* configViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

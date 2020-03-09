@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeView: UIViewController {
     let nextButton = UIButton()
     let updateAlert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
     let configViewModel = ConfigViewModel()
