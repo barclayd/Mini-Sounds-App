@@ -7,12 +7,24 @@
 //
 
 import Foundation
+import UIKit
+
+struct PullToRefresh {
+    var text: String
+    var refreshWheel: [NSAttributedString.Key : UIColor]
+    
+    var atrributes: NSAttributedString {
+        NSAttributedString(string: text, attributes: refreshWheel)
+    }
+}
 
 class ConfigViewModel {
     var config: Config
+    var pullToRefresh: PullToRefresh
 
     init() {
         self.config = Config()
+        self.pullToRefresh = PullToRefresh(text: "Retuning the radio...", refreshWheel: [NSAttributedString.Key.foregroundColor: UIColor.soundsOrange])
     }
 
     var showUpdateAlert: Bool {

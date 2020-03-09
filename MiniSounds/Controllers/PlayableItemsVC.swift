@@ -52,13 +52,7 @@ class PlayableItemsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
 
     func setupPullToRefresh() {
         if #available(iOS 10.0, *) {
-            refreshControl.tintColor = .orange
-
-            let pullToRefreshMessage = "Retuning your set..."
-            let refreshWheelAttribute = [NSAttributedString.Key.foregroundColor: UIColor.soundsOrange]
-            let pullToRefreshAttributes = NSAttributedString(string: pullToRefreshMessage, attributes: refreshWheelAttribute)
-
-            refreshControl.attributedTitle = pullToRefreshAttributes
+            refreshControl.attributedTitle = configViewModel.pullToRefresh.atrributes
             tableView.refreshControl = refreshControl
         } else {
             tableView.addSubview(refreshControl)
