@@ -17,6 +17,7 @@
 		ACB5D86C241637930057FCF0 /* ConfigViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB5D86B241637930057FCF0 /* ConfigViewModel.swift */; };
 		ACB5D86E241638860057FCF0 /* Playable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB5D86D241638860057FCF0 /* Playable.swift */; };
 		ACB5D87024164A890057FCF0 /* PlayableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB5D86F24164A890057FCF0 /* PlayableViewModel.swift */; };
+		ACB5D873241670100057FCF0 /* playableViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB5D872241670100057FCF0 /* playableViewModelTests.swift */; };
 		ACC0903F240FB31E005E79D1 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = ACC0903E240FB31E005E79D1 /* Kingfisher */; };
 		ACF22287240D077900E6E065 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF22286240D077900E6E065 /* AppDelegate.swift */; };
 		ACF22289240D077900E6E065 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF22288240D077900E6E065 /* SceneDelegate.swift */; };
@@ -65,6 +66,7 @@
 		ACB5D86B241637930057FCF0 /* ConfigViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigViewModel.swift; sourceTree = "<group>"; };
 		ACB5D86D241638860057FCF0 /* Playable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playable.swift; sourceTree = "<group>"; };
 		ACB5D86F24164A890057FCF0 /* PlayableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayableViewModel.swift; sourceTree = "<group>"; };
+		ACB5D872241670100057FCF0 /* playableViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playableViewModelTests.swift; sourceTree = "<group>"; };
 		ACF22283240D077900E6E065 /* MiniSounds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniSounds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACF22286240D077900E6E065 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACF22288240D077900E6E065 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -153,6 +155,15 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		ACB5D87124166FEB0057FCF0 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				ACF222BC240D581F00E6E065 /* configViewModelTests.swift */,
+				ACB5D872241670100057FCF0 /* playableViewModelTests.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		ACF2227A240D077900E6E065 = {
 			isa = PBXGroup;
 			children = (
@@ -197,10 +208,10 @@
 		ACF2229C240D077B00E6E065 /* MiniSoundsTests */ = {
 			isa = PBXGroup;
 			children = (
+				ACB5D87124166FEB0057FCF0 /* ViewModels */,
 				ACF222BE240D599B00E6E065 /* Mocks */,
 				ACF2229D240D077B00E6E065 /* MiniSoundsTests.swift */,
 				ACF2229F240D077B00E6E065 /* Info.plist */,
-				ACF222BC240D581F00E6E065 /* configViewModelTests.swift */,
 			);
 			path = MiniSoundsTests;
 			sourceTree = "<group>";
@@ -523,6 +534,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACB5D873241670100057FCF0 /* playableViewModelTests.swift in Sources */,
 				ACF222C0240D59AF00E6E065 /* URLProtocolSub.swift in Sources */,
 				ACF2229E240D077B00E6E065 /* MiniSoundsTests.swift in Sources */,
 				ACF222BD240D581F00E6E065 /* configViewModelTests.swift in Sources */,
