@@ -52,6 +52,7 @@ class PlayableItemsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
 
     func setupPullToRefresh() {
         if #available(iOS 10.0, *) {
+            refreshControl.tintColor = configViewModel.pullToRefresh.wheelColour
             refreshControl.attributedTitle = configViewModel.pullToRefresh.atrributes
             tableView.refreshControl = refreshControl
         } else {

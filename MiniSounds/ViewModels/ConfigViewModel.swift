@@ -11,10 +11,10 @@ import UIKit
 
 struct PullToRefresh {
     var text: String
-    var refreshWheel: [NSAttributedString.Key : UIColor]
-    
+    var textColour: [NSAttributedString.Key : UIColor]
+    var wheelColour: UIColor = .soundsOrange
     var atrributes: NSAttributedString {
-        NSAttributedString(string: text, attributes: refreshWheel)
+        NSAttributedString(string: text, attributes: textColour)
     }
 }
 
@@ -24,7 +24,7 @@ class ConfigViewModel {
 
     init() {
         self.config = Config()
-        self.pullToRefresh = PullToRefresh(text: "Retuning the radio...", refreshWheel: [NSAttributedString.Key.foregroundColor: UIColor.soundsOrange])
+        self.pullToRefresh = PullToRefresh(text: "Retuning the radio...", textColour: [NSAttributedString.Key.foregroundColor: .black])
     }
 
     var showUpdateAlert: Bool {

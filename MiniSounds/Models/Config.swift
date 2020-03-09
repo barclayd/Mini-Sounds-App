@@ -31,23 +31,6 @@ struct RMSConfig: Codable {
     var rootUrl: String
 }
 
-struct Network: Codable {
-    var id: String
-    var key: String
-    var short_title: String
-    var logo_url: String
-}
-
-struct Titles: Codable {
-    var primary: String
-    var secondary: String
-    var tertiary: String
-}
-
-struct Duration: Codable {
-    var label: String
-}
-
 struct PlayableResponse: Codable {
     var data: [Playable]
 }
