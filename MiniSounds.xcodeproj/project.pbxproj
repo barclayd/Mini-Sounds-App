@@ -26,7 +26,7 @@
 		ACF22293240D077B00E6E065 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACF22291240D077B00E6E065 /* LaunchScreen.storyboard */; };
 		ACF2229E240D077B00E6E065 /* MiniSoundsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF2229D240D077B00E6E065 /* MiniSoundsTests.swift */; };
 		ACF222A9240D077B00E6E065 /* MiniSoundsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF222A8240D077B00E6E065 /* MiniSoundsUITests.swift */; };
-		ACF222B8240D2F0E00E6E065 /* SecondScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF222B7240D2F0E00E6E065 /* SecondScreen.swift */; };
+		ACF222B8240D2F0E00E6E065 /* PlayerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF222B7240D2F0E00E6E065 /* PlayerScreen.swift */; };
 		ACF222BB240D34AC00E6E065 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF222BA240D34AC00E6E065 /* Config.swift */; };
 		ACF222BD240D581F00E6E065 /* configTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF222BC240D581F00E6E065 /* configTests.swift */; };
 		ACF222C0240D59AF00E6E065 /* URLProtocolSub.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF222BF240D59AF00E6E065 /* URLProtocolSub.swift */; };
@@ -80,7 +80,7 @@
 		ACF222A4240D077B00E6E065 /* MiniSoundsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MiniSoundsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACF222A8240D077B00E6E065 /* MiniSoundsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniSoundsUITests.swift; sourceTree = "<group>"; };
 		ACF222AA240D077B00E6E065 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ACF222B7240D2F0E00E6E065 /* SecondScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondScreen.swift; sourceTree = "<group>"; };
+		ACF222B7240D2F0E00E6E065 /* PlayerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerScreen.swift; sourceTree = "<group>"; };
 		ACF222BA240D34AC00E6E065 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		ACF222BC240D581F00E6E065 /* configTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = configTests.swift; sourceTree = "<group>"; };
 		ACF222BF240D59AF00E6E065 /* URLProtocolSub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolSub.swift; sourceTree = "<group>"; };
@@ -220,7 +220,7 @@
 		ACF222B6240D2EF400E6E065 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				ACF222B7240D2F0E00E6E065 /* SecondScreen.swift */,
+				ACF222B7240D2F0E00E6E065 /* PlayerScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -513,7 +513,7 @@
 				AC9917CF240E7BF600852F9C /* UIColour.swift in Sources */,
 				AC9917D4240E7E3A00852F9C /* PlayableItemsVC.swift in Sources */,
 				ACB5D87024164A890057FCF0 /* PlayableViewModel.swift in Sources */,
-				ACF222B8240D2F0E00E6E065 /* SecondScreen.swift in Sources */,
+				ACF222B8240D2F0E00E6E065 /* PlayerScreen.swift in Sources */,
 				ACF222BB240D34AC00E6E065 /* Config.swift in Sources */,
 				AC9917D7240E813700852F9C /* PlayableItemCell.swift in Sources */,
 				AC9917D1240E7C7B00852F9C /* AutoLayoutConstraints.swift in Sources */,

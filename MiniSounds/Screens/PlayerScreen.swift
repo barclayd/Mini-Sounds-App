@@ -9,7 +9,9 @@
 import SMP
 import UIKit
 
-class SecondScreen: UIViewController {
+class PlayerScreen: UIViewController {
+    var player: BBCSMP!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -18,6 +20,7 @@ class SecondScreen: UIViewController {
         view.backgroundColor = .white
         
         setUpSMP()
+        player.play()
         // Do any additional setup after loading the view.
     }
     
@@ -25,8 +28,7 @@ class SecondScreen: UIViewController {
         guard let playerItemProvider = BBCSMPBackingOffMediaSelectorPlayerItemProvider(mediaSelectorClient: MediaSelectorClient(), mediaSet: "mobile-phone-main", vpid: "bbc_radio_one", artworkFetcher: nil, blacklist: TimeBasedBlacklist(blacklistInterval: 0), connectionResolver: TimeBasedConnectionResolver(), avStatisticsConsumer: AVStatisticsConsumer()) else {
             return
         }
-        let player = BBCSMPPlayerBuilder().withPlayerItemProvider(playerItemProvider).build()
-        player.play()
+        player = BBCSMPPlayerBuilder().withPlayerItemProvider(playerItemProvider).build()
     }
 }
 
@@ -62,7 +64,7 @@ class AVStatisticsConsumer: NSObject, BBCSMPAVStatisticsConsumer {
     override func isEqual(_ object: Any?) -> Bool {
         return true
     }
-        
+    
     override func isProxy() -> Bool {
         return true
     }
