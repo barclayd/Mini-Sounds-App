@@ -83,7 +83,7 @@ class PlayableItemsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Cells.playableItemCell.rawValue) as! PlayableItemCell
         let playable = configViewModel.config.playable[indexPath.row]
-        cell.set(playable: playable)
+        cell.set(playableViewModel: PlayableViewModel(playable: playable))
         return cell
     }
 
