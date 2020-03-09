@@ -27,15 +27,15 @@ class MiniSoundsUITests: XCTestCase {
         app.launch()
 
         XCTAssert(app.navigationBars["miniSounds"].isHittable)
-        XCTAssert(app.buttons["Podcasts"].isHittable)
+        XCTAssert(app.buttons["Live Radio"].isHittable)
     }
 
     func testTappingOnPodcastsButtonTakesUserToSecondScreen() {
         let app = XCUIApplication()
         app.launch()
 
-        app.buttons["Podcasts"].tap()
-        XCTAssert(app.navigationBars["Podcasts"].isHittable)
+        app.buttons["Live Radio"].tap()
+        XCTAssert(app.navigationBars["Live Radio"].isHittable)
     }
 
     func testLaunchPerformance() {

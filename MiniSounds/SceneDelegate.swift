@@ -16,19 +16,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
-        let firstScreen = ViewController()
+        let firstScreen = HomeView()
         firstScreen.title = "miniSounds"
         let navigationController = UINavigationController(rootViewController: firstScreen)
         navigationController.navigationBar.prefersLargeTitles = true
         navigationController.navigationBar.tintColor = .black
         
-        navigationController.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.orange]
+        navigationController.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.soundsOrange]
 
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.windowScene = windowScene
         window?.rootViewController = navigationController
-        window?.backgroundColor = UIColor.orange
+        window?.backgroundColor = UIColor.soundsOrange
         window?.makeKeyAndVisible()
     }
 

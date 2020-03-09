@@ -9,7 +9,7 @@
 import UIKit
 
 class PlayableItemsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    var config: Config
+    var configViewModel: ConfigViewModel
 
     private let refreshControl = UIRefreshControl()
 
@@ -17,8 +17,8 @@ class PlayableItemsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         case playableItemCell
     }
 
-    init(config: Config) {
-        self.config = config
+    init(configVM: ConfigViewModel) {
+        self.configViewModel = configVM
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -52,13 +52,8 @@ class PlayableItemsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
 
     func setupPullToRefresh() {
         if #available(iOS 10.0, *) {
-            refreshControl.tintColor = .orange
-
-            let pullToRefreshMessage = "Retuning your set..."
-            let refreshWheelAttribute = [NSAttributedString.Key.foregroundColor: UIColor.orange]
-            let pullToRefreshAttributes = NSAttributedString(string: pullToRefreshMessage, attributes: refreshWheelAttribute)
-
-            refreshControl.attributedTitle = pullToRefreshAttributes
+            refreshControl.tintColor = configViewModel.pullToRefresh.wheelColour
+            refreshControl.attributedTitle = configViewModel.pullToRefresh.attributes
             tableView.refreshControl = refreshControl
         } else {
             tableView.addSubview(refreshControl)
@@ -68,7 +63,7 @@ class PlayableItemsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     }
 
     @objc private func refreshPlayableItems(_ sender: Any) {
-        config.getPlayableItems { success in
+        configViewModel.getPlayableItems { success in
             if success {
                 self.refreshControl.endRefreshing()
                 self.tableView.reloadData()
@@ -77,19 +72,19 @@ class PlayableItemsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        config.playable.count
+        configViewModel.config.playable.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Cells.playableItemCell.rawValue) as! PlayableItemCell
-        let playable = config.playable[indexPath.row]
-        cell.set(playable: playable)
+        let playable = configViewModel.config.playable[indexPath.row]
+        cell.set(playableViewModel: PlayableViewModel(playable: playable))
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let playable = config.playable[indexPath.row]
-        let nextScreen = SecondScreen()
+        let playable = configViewModel.config.playable[indexPath.row]
+        let nextScreen = PlayerScreen()
         nextScreen.title = playable.titles.primary
         navigationController?.pushViewController(nextScreen, animated: true)
     }

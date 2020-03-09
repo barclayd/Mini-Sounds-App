@@ -8,31 +8,31 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeView: UIViewController {
     let nextButton = UIButton()
     let updateAlert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
-    let config = Config()
+    let configViewModel = ConfigViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setUpNextButton()
         loadConfig()
-        view.backgroundColor = UIColor(hex: "#ff4900")?.withAlphaComponent(0.5)
+        view.backgroundColor = UIColor.soundsOrange.withAlphaComponent(0.5)
     }
 
     func loadConfig() {
-        config.load { success in
-            if success, self.config.showUpdateAlert {
-                self.updateAlert.title = self.config.status.title
-                self.updateAlert.message = self.config.status.message
-                self.updateAlert.addAction(UIAlertAction(title: self.config.status.linkTitle, style: .default, handler: { _ in
-                    self.config.handleAlertPress()
+        configViewModel.load { success in
+            if success, self.configViewModel.showUpdateAlert {
+                self.updateAlert.title = self.configViewModel.config.status.title
+                self.updateAlert.message = self.configViewModel.config.status.message
+                self.updateAlert.addAction(UIAlertAction(title: self.configViewModel.config.status.linkTitle, style: .default, handler: { _ in
+                    self.configViewModel.handleAlertPress()
                     self.showUpdateAlert()
                 }))
                 self.showUpdateAlert()
             } else {
-                self.config.getPlayableItems { success in
+                self.configViewModel.getPlayableItems { success in
                     if success {
                         print("successfully loaded items")
                     }
@@ -50,7 +50,7 @@ class ViewController: UIViewController {
         nextButton.layer.cornerRadius = 10
         nextButton.clipsToBounds = true
         nextButton.setTitleColor(.orange, for: .normal)
-        nextButton.setTitle("Podcasts", for: .normal)
+        nextButton.setTitle("Live Radio", for: .normal)
         nextButton.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
 
         view.addSubview(nextButton)
@@ -58,9 +58,9 @@ class ViewController: UIViewController {
     }
 
     @objc func nextButtonTapped() {
-        if config.playable.count > 0 {
-            let nextScreen = PlayableItemsVC(config: config)
-            nextScreen.title = "Podcasts"
+        if configViewModel.config.playable.count > 0 {
+            let nextScreen = PlayableItemsVC(configVM: configViewModel)
+            nextScreen.title = "Live Radio"
             navigationController?.pushViewController(nextScreen, animated: true)
         }
     }

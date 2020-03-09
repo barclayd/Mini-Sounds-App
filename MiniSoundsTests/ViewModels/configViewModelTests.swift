@@ -10,13 +10,13 @@
 import UIKit
 import XCTest
 
-class configTests: XCTestCase {
-    var config: Config!
+class configViewModelTests: XCTestCase {
+    var configViewModel: ConfigViewModel!
     var expectation: XCTestExpectation!
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        config = Config()
+        configViewModel = ConfigViewModel()
         expectation = expectation(description: "Expectation")
     }
 
@@ -105,13 +105,13 @@ class configTests: XCTestCase {
     }
 
     func setRMS() {
-        config.rms = RMSConfig(apiKey: "mock-api-key", rootUrl: "https://mock-rms-api.bbc.co.uk")
+        configViewModel.config.rms = RMSConfig(apiKey: "mock-api-key", rootUrl: "https://mock-rms-api.bbc.co.uk")
     }
 
     func testUpdateAlertIsTrueWhenisOnIsFalse() {
-        config.load(urlSession: generateURLSessionMock(jsonString: mockRMSResponse(isOn: false))) { success in
+        configViewModel.load(urlSession: generateURLSessionMock(jsonString: mockRMSResponse(isOn: false))) { success in
             if success {
-                XCTAssertTrue(self.config.showUpdateAlert)
+                XCTAssertTrue(self.configViewModel.showUpdateAlert)
             }
             self.expectation.fulfill()
         }
@@ -119,9 +119,9 @@ class configTests: XCTestCase {
     }
 
     func testUpdateAlertIsFalseWhenisOnIsTrue() {
-        config.load(urlSession: generateURLSessionMock(jsonString: mockRMSResponse(isOn: true))) { success in
+        configViewModel.load(urlSession: generateURLSessionMock(jsonString: mockRMSResponse(isOn: true))) { success in
             if success {
-                XCTAssertFalse(self.config.showUpdateAlert)
+                XCTAssertFalse(self.configViewModel.showUpdateAlert)
             }
             self.expectation.fulfill()
         }
@@ -130,9 +130,9 @@ class configTests: XCTestCase {
 
     func testStatusTitleIsPopulatedFromJSON() {
         let title = "Mock title"
-        config.load(urlSession: generateURLSessionMock(jsonString: mockRMSResponse(isOn: true, title: title))) { success in
+        configViewModel.load(urlSession: generateURLSessionMock(jsonString: mockRMSResponse(isOn: true, title: title))) { success in
             if success {
-                XCTAssertEqual(self.config.status.title, title)
+                XCTAssertEqual(self.configViewModel.config.status.title, title)
             }
             self.expectation.fulfill()
         }
@@ -141,9 +141,9 @@ class configTests: XCTestCase {
 
     func testStatusMessageIsPopulatedFromJSON() {
         let message = "Mock message"
-        config.load(urlSession: generateURLSessionMock(jsonString: mockRMSResponse(isOn: true, message: message))) { success in
+        configViewModel.load(urlSession: generateURLSessionMock(jsonString: mockRMSResponse(isOn: true, message: message))) { success in
             if success {
-                XCTAssertEqual(self.config.status.message, message)
+                XCTAssertEqual(self.configViewModel.config.status.message, message)
             }
             self.expectation.fulfill()
         }
@@ -152,9 +152,9 @@ class configTests: XCTestCase {
 
     func testStatusLinkTitleIsPopulatedFromJSON() {
         let linkTitle = "Mock link title"
-        config.load(urlSession: generateURLSessionMock(jsonString: mockRMSResponse(isOn: true, linkTitle: linkTitle))) { success in
+        configViewModel.load(urlSession: generateURLSessionMock(jsonString: mockRMSResponse(isOn: true, linkTitle: linkTitle))) { success in
             if success {
-                XCTAssertEqual(self.config.status.linkTitle, linkTitle)
+                XCTAssertEqual(self.configViewModel.config.status.linkTitle, linkTitle)
             }
             self.expectation.fulfill()
         }
@@ -163,9 +163,9 @@ class configTests: XCTestCase {
 
     func testAppStoreURLTitleIsPopulatedFromJSON() {
         let appStoreURL = "https://mock-app-store-url.com"
-        config.load(urlSession: generateURLSessionMock(jsonString: mockRMSResponse(isOn: true, appStoreUrl: appStoreURL))) { success in
+        configViewModel.load(urlSession: generateURLSessionMock(jsonString: mockRMSResponse(isOn: true, appStoreUrl: appStoreURL))) { success in
             if success {
-                XCTAssertEqual(self.config.status.appStoreUrl, appStoreURL)
+                XCTAssertEqual(self.configViewModel.config.status.appStoreUrl, appStoreURL)
             }
             self.expectation.fulfill()
         }
@@ -174,9 +174,9 @@ class configTests: XCTestCase {
 
     func testAPIKeyIsPopulatedFromJSON() {
         let apiKey = "mock-api-key"
-        config.load(urlSession: generateURLSessionMock(jsonString: mockRMSResponse(isOn: true, apiKey: apiKey))) { success in
+        configViewModel.load(urlSession: generateURLSessionMock(jsonString: mockRMSResponse(isOn: true, apiKey: apiKey))) { success in
             if success {
-                XCTAssertEqual(self.config.rms.apiKey, apiKey)
+                XCTAssertEqual(self.configViewModel.config.rms.apiKey, apiKey)
             }
             self.expectation.fulfill()
         }
@@ -185,9 +185,9 @@ class configTests: XCTestCase {
 
     func testRootURLIsPopulatedFromJSON() {
         let rootUrl = "https://mock-rms.api.bbc.co.uk"
-        config.load(urlSession: generateURLSessionMock(jsonString: mockRMSResponse(isOn: true, rootUrl: rootUrl))) { success in
+        configViewModel.load(urlSession: generateURLSessionMock(jsonString: mockRMSResponse(isOn: true, rootUrl: rootUrl))) { success in
             if success {
-                XCTAssertEqual(self.config.rms.rootUrl, rootUrl)
+                XCTAssertEqual(self.configViewModel.config.rms.rootUrl, rootUrl)
             }
             self.expectation.fulfill()
         }
@@ -196,7 +196,7 @@ class configTests: XCTestCase {
 
     func testLoadsPlayableItemsWhenRootUrlAndApiKeyAreSet() {
         setRMS()
-        config.getPlayableItems(urlSession: generateURLSessionMock(url: URL(string: config.playableItemsUrl), jsonString: mockPlayableItemsResponse())) { success in
+        configViewModel.getPlayableItems(urlSession: generateURLSessionMock(url: URL(string: configViewModel.playableItemsUrl), jsonString: mockPlayableItemsResponse())) { success in
             if success {
                 XCTAssertTrue(success)
             }
@@ -207,9 +207,9 @@ class configTests: XCTestCase {
 
     func testLoadsPlayableItemsWithTheCorrectImageUrl() {
         setRMS()
-        config.getPlayableItems(urlSession: generateURLSessionMock(url: URL(string: config.playableItemsUrl), jsonString: mockPlayableItemsResponse())) { success in
+        configViewModel.getPlayableItems(urlSession: generateURLSessionMock(url: URL(string: configViewModel.playableItemsUrl), jsonString: mockPlayableItemsResponse())) { success in
             if success {
-                XCTAssertEqual(self.config.playable[0].image_url, "https://ichef.bbci.co.uk/images/ic/{recipe}/p074608w.jpg")
+                XCTAssertEqual(self.configViewModel.config.playable[0].image_url, "https://ichef.bbci.co.uk/images/ic/{recipe}/p074608w.jpg")
             }
             self.expectation.fulfill()
         }
@@ -218,9 +218,9 @@ class configTests: XCTestCase {
 
     func testLoadsPlayableItemsWithTheCorrectDurationLabel() {
         setRMS()
-        config.getPlayableItems(urlSession: generateURLSessionMock(url: URL(string: config.playableItemsUrl), jsonString: mockPlayableItemsResponse())) { success in
+        configViewModel.getPlayableItems(urlSession: generateURLSessionMock(url: URL(string: configViewModel.playableItemsUrl), jsonString: mockPlayableItemsResponse())) { success in
             if success {
-                XCTAssertEqual(self.config.playable[0].duration.label, "165 mins")
+                XCTAssertEqual(self.configViewModel.config.playable[0].duration.label, "165 mins")
             }
             self.expectation.fulfill()
         }
@@ -229,9 +229,9 @@ class configTests: XCTestCase {
 
     func testLoadsPlayableItemsWithTheCorrectType() {
         setRMS()
-        config.getPlayableItems(urlSession: generateURLSessionMock(url: URL(string: config.playableItemsUrl), jsonString: mockPlayableItemsResponse())) { success in
+        configViewModel.getPlayableItems(urlSession: generateURLSessionMock(url: URL(string: configViewModel.playableItemsUrl), jsonString: mockPlayableItemsResponse())) { success in
             if success {
-                XCTAssertEqual(self.config.playable[0].type, "playable_item")
+                XCTAssertEqual(self.configViewModel.config.playable[0].type, "playable_item")
             }
             self.expectation.fulfill()
         }
@@ -240,9 +240,9 @@ class configTests: XCTestCase {
 
     func testLoadsPlayableItemsWithTheCorrectPrimaryTitle() {
         setRMS()
-        config.getPlayableItems(urlSession: generateURLSessionMock(url: URL(string: config.playableItemsUrl), jsonString: mockPlayableItemsResponse())) { success in
+        configViewModel.getPlayableItems(urlSession: generateURLSessionMock(url: URL(string: configViewModel.playableItemsUrl), jsonString: mockPlayableItemsResponse())) { success in
             if success {
-                XCTAssertEqual(self.config.playable[0].titles.primary, "Clara Amfo")
+                XCTAssertEqual(self.configViewModel.config.playable[0].titles.primary, "Clara Amfo")
             }
             self.expectation.fulfill()
         }
@@ -251,9 +251,9 @@ class configTests: XCTestCase {
 
     func testLoadsPlayableItemsWithTheCorrectSecondaryTitle() {
         setRMS()
-        config.getPlayableItems(urlSession: generateURLSessionMock(url: URL(string: config.playableItemsUrl), jsonString: mockPlayableItemsResponse())) { success in
+        configViewModel.getPlayableItems(urlSession: generateURLSessionMock(url: URL(string: configViewModel.playableItemsUrl), jsonString: mockPlayableItemsResponse())) { success in
             if success {
-                XCTAssertEqual(self.config.playable[0].titles.secondary, "10:00 - 12:45")
+                XCTAssertEqual(self.configViewModel.config.playable[0].titles.secondary, "10:00 - 12:45")
             }
             self.expectation.fulfill()
         }
@@ -262,9 +262,9 @@ class configTests: XCTestCase {
 
     func testLoadsPlayableItemsWithTheCorrectTertiaryTitle() {
         setRMS()
-        config.getPlayableItems(urlSession: generateURLSessionMock(url: URL(string: config.playableItemsUrl), jsonString: mockPlayableItemsResponse())) { success in
+        configViewModel.getPlayableItems(urlSession: generateURLSessionMock(url: URL(string: configViewModel.playableItemsUrl), jsonString: mockPlayableItemsResponse())) { success in
             if success {
-                XCTAssertEqual(self.config.playable[0].titles.tertiary, "03/03/2020")
+                XCTAssertEqual(self.configViewModel.config.playable[0].titles.tertiary, "03/03/2020")
             }
             self.expectation.fulfill()
         }
@@ -273,9 +273,9 @@ class configTests: XCTestCase {
 
     func testLoadsPlayableItemsWithTheCorrectId() {
         setRMS()
-        config.getPlayableItems(urlSession: generateURLSessionMock(url: URL(string: config.playableItemsUrl), jsonString: mockPlayableItemsResponse())) { success in
+        configViewModel.getPlayableItems(urlSession: generateURLSessionMock(url: URL(string: configViewModel.playableItemsUrl), jsonString: mockPlayableItemsResponse())) { success in
             if success {
-                XCTAssertEqual(self.config.playable[0].id, "bbc_radio_one")
+                XCTAssertEqual(self.configViewModel.config.playable[0].id, "bbc_radio_one")
             }
             self.expectation.fulfill()
         }
@@ -284,9 +284,9 @@ class configTests: XCTestCase {
 
     func testLoadsPlayableItemsWithTheCorrectNetworkId() {
         setRMS()
-        config.getPlayableItems(urlSession: generateURLSessionMock(url: URL(string: config.playableItemsUrl), jsonString: mockPlayableItemsResponse())) { success in
+        configViewModel.getPlayableItems(urlSession: generateURLSessionMock(url: URL(string: configViewModel.playableItemsUrl), jsonString: mockPlayableItemsResponse())) { success in
             if success {
-                XCTAssertEqual(self.config.playable[0].network.id, "bbc_radio_one")
+                XCTAssertEqual(self.configViewModel.config.playable[0].network.id, "bbc_radio_one")
             }
             self.expectation.fulfill()
         }
@@ -295,9 +295,9 @@ class configTests: XCTestCase {
 
     func testLoadsPlayableItemsWithTheCorrectNetworkKey() {
         setRMS()
-        config.getPlayableItems(urlSession: generateURLSessionMock(url: URL(string: config.playableItemsUrl), jsonString: mockPlayableItemsResponse())) { success in
+        configViewModel.getPlayableItems(urlSession: generateURLSessionMock(url: URL(string: configViewModel.playableItemsUrl), jsonString: mockPlayableItemsResponse())) { success in
             if success {
-                XCTAssertEqual(self.config.playable[0].network.key, "radio1")
+                XCTAssertEqual(self.configViewModel.config.playable[0].network.key, "radio1")
             }
             self.expectation.fulfill()
         }
@@ -306,9 +306,9 @@ class configTests: XCTestCase {
 
     func testLoadsPlayableItemsWithTheCorrectNetworkLogoURL() {
         setRMS()
-        config.getPlayableItems(urlSession: generateURLSessionMock(url: URL(string: config.playableItemsUrl), jsonString: mockPlayableItemsResponse())) { success in
+        configViewModel.getPlayableItems(urlSession: generateURLSessionMock(url: URL(string: configViewModel.playableItemsUrl), jsonString: mockPlayableItemsResponse())) { success in
             if success {
-                XCTAssertEqual(self.config.playable[0].network.logo_url, "https://sounds.files.bbci.co.uk/2.2.4/networks/bbc_radio_one/{type}_{size}.{format}")
+                XCTAssertEqual(self.configViewModel.config.playable[0].network.logo_url, "https://sounds.files.bbci.co.uk/2.2.4/networks/bbc_radio_one/{type}_{size}.{format}")
             }
             self.expectation.fulfill()
         }
@@ -317,9 +317,9 @@ class configTests: XCTestCase {
 
     func testLoadsPlayableItemsWithTheCorrectNetworkShortTitle() {
         setRMS()
-        config.getPlayableItems(urlSession: generateURLSessionMock(url: URL(string: config.playableItemsUrl), jsonString: mockPlayableItemsResponse())) { success in
+        configViewModel.getPlayableItems(urlSession: generateURLSessionMock(url: URL(string: configViewModel.playableItemsUrl), jsonString: mockPlayableItemsResponse())) { success in
             if success {
-                XCTAssertEqual(self.config.playable[0].network.short_title, "Radio 1")
+                XCTAssertEqual(self.configViewModel.config.playable[0].network.short_title, "Radio 1")
             }
             self.expectation.fulfill()
         }
@@ -327,20 +327,12 @@ class configTests: XCTestCase {
     }
 
     func testCannotLoadPlayableItemsWhenRootUrlAndApiKeyAreNotSet() {
-        config.getPlayableItems(urlSession: generateURLSessionMock(url: URL(string: config.playableItemsUrl), jsonString: mockPlayableItemsResponse())) { success in
+        configViewModel.getPlayableItems(urlSession: generateURLSessionMock(url: URL(string: configViewModel.playableItemsUrl), jsonString: mockPlayableItemsResponse())) { success in
             if success {
                 XCTAssertFalse(success)
             }
             self.expectation.fulfill()
         }
-        wait(for: [expectation], timeout: 1.0)
-    }
-
-    func testCorrectPlayableItemsUrlIsGeneratedWhenARootUrlIsSupplied() {
-        let rootUrl = "https://mock-rms-api.bbc.co.uk"
-        config.rms = RMSConfig(apiKey: "mock-api-key", rootUrl: rootUrl)
-        XCTAssertEqual(config.playableItemsUrl, "\(rootUrl)/v2/networks/playable?promoted=true")
-        expectation.fulfill()
         wait(for: [expectation], timeout: 1.0)
     }
 }

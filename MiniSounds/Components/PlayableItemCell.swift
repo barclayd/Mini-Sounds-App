@@ -32,12 +32,12 @@ class PlayableItemCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func set(playable: Playable) {
-        itemImageView.kf.setImage(with: playable.iChefUrl, placeholder: UIImage(named: "sounds"))
-        itemTitleLabel.text = playable.titles.primary
+    func set(playableViewModel: PlayableViewModel) {
+        itemImageView.kf.setImage(with: playableViewModel.iChefUrl, placeholder: playableViewModel.placeholderImage)
+        itemTitleLabel.text = playableViewModel.playable.titles.primary
         itemTitleLabel.font = UIFont.boldSystemFont(ofSize: 18)
-        itemsSubtitleLabel.text = playable.network.short_title
-        itemsSubtitleLabel.textColor = .blue
+        itemsSubtitleLabel.text = playableViewModel.playable.network.short_title
+        itemsSubtitleLabel.textColor = UIColor.soundsOrange
     }
     
     func configureImageView() {
