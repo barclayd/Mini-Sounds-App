@@ -1,6 +1,0 @@
-framework module Pods_MiniSounds {
-  umbrella header "Pods-MiniSounds-umbrella.h"
-
-  export *
-  module * { export * }
-}
