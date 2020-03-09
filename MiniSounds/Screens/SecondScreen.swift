@@ -19,16 +19,13 @@ class SecondScreen: UIViewController {
 
         view.backgroundColor = .white
 
-//        setUpSMP()
+        setUpSMP()
         // Do any additional setup after loading the view.
     }
 
-//    func setUpSMP() {
-//        let playerFrame: CGRect = CGRect(x: 50, y: 100, width: 200, height: 200)
-//        let brand: BBCSMPBrand = BBCSMPBrand()
-//        let player: BBCSMP = BBCSMPPlayerBuilder().withPlayerItemProvider(playerItemProvider).build()
-//        let playerView = player.buildUserInterface().withFrame(playerFrame).withBrand(brand).buildView()
-//
-//        view.addSubview(playerView)
-//    }
+    func setUpSMP() {
+        let playerItemProvider: BBCSMPMediaSelectorPlayerItemProvider = BBCSMPMediaSelectorPlayerItemProvider(mediaSet: "mobile-phone-main", vpid: "bbc_radio_one")
+        let player: BBCSMP = BBCSMPPlayerBuilder().withPlayerItemProvider(playerItemProvider)
+        player.play()
+    }
 }
