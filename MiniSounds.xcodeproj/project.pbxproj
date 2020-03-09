@@ -19,6 +19,7 @@
 		ACB5D87024164A890057FCF0 /* PlayableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB5D86F24164A890057FCF0 /* PlayableViewModel.swift */; };
 		ACB5D873241670100057FCF0 /* playableViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB5D872241670100057FCF0 /* playableViewModelTests.swift */; };
 		ACB5D87524167F330057FCF0 /* configViewModelPullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB5D87424167F330057FCF0 /* configViewModelPullToRefresh.swift */; };
+		ACB5D877241681CB0057FCF0 /* configViewModelPlayableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB5D876241681CB0057FCF0 /* configViewModelPlayableTests.swift */; };
 		ACC0903F240FB31E005E79D1 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = ACC0903E240FB31E005E79D1 /* Kingfisher */; };
 		ACF22287240D077900E6E065 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF22286240D077900E6E065 /* AppDelegate.swift */; };
 		ACF22289240D077900E6E065 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF22288240D077900E6E065 /* SceneDelegate.swift */; };
@@ -69,6 +70,7 @@
 		ACB5D86F24164A890057FCF0 /* PlayableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayableViewModel.swift; sourceTree = "<group>"; };
 		ACB5D872241670100057FCF0 /* playableViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playableViewModelTests.swift; sourceTree = "<group>"; };
 		ACB5D87424167F330057FCF0 /* configViewModelPullToRefresh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = configViewModelPullToRefresh.swift; sourceTree = "<group>"; };
+		ACB5D876241681CB0057FCF0 /* configViewModelPlayableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = configViewModelPlayableTests.swift; sourceTree = "<group>"; };
 		ACF22283240D077900E6E065 /* MiniSounds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniSounds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACF22286240D077900E6E065 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACF22288240D077900E6E065 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				ACF222BC240D581F00E6E065 /* configViewModelTests.swift */,
 				ACB5D872241670100057FCF0 /* playableViewModelTests.swift */,
 				ACB5D87424167F330057FCF0 /* configViewModelPullToRefresh.swift */,
+				ACB5D876241681CB0057FCF0 /* configViewModelPlayableTests.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -541,6 +544,7 @@
 				ACB5D87524167F330057FCF0 /* configViewModelPullToRefresh.swift in Sources */,
 				ACF222C0240D59AF00E6E065 /* URLProtocolSub.swift in Sources */,
 				ACF2229E240D077B00E6E065 /* MiniSoundsTests.swift in Sources */,
+				ACB5D877241681CB0057FCF0 /* configViewModelPlayableTests.swift in Sources */,
 				ACF222BD240D581F00E6E065 /* configViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -335,12 +335,4 @@ class configViewModelTests: XCTestCase {
         }
         wait(for: [expectation], timeout: 1.0)
     }
-
-    func testCorrectPlayableItemsUrlIsGeneratedWhenARootUrlIsSupplied() {
-        let rootUrl = "https://mock-rms-api.bbc.co.uk"
-        configViewModel.config.rms = RMSConfig(apiKey: "mock-api-key", rootUrl: rootUrl)
-        XCTAssertEqual(configViewModel.playableItemsUrl, "\(rootUrl)/v2/networks/playable?promoted=true")
-        expectation.fulfill()
-        wait(for: [expectation], timeout: 1.0)
-    }
 }
