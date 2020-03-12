@@ -1,5 +1,5 @@
 //
-//  SecondScreen.swift
+//  PlayerScreen.swift
 //  MiniSounds
 //
 //  Created by Daniel Barclay on 02/03/2020.
@@ -11,6 +11,16 @@ import UIKit
 
 class PlayerScreen: UIViewController {
     var player: BBCSMP!
+    var network: Network
+    
+    init(network: Network) {
+        self.network = network
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,10 +35,9 @@ class PlayerScreen: UIViewController {
     }
     
     func setUpSMP() {
-        guard let playerItemProvider = BBCSMPBackingOffMediaSelectorPlayerItemProvider(mediaSelectorClient: MediaSelectorClient(), mediaSet: "mobile-phone-main", vpid: "bbc_radio_one", artworkFetcher: nil, blacklist: TimeBasedBlacklist(blacklistInterval: 0), connectionResolver: TimeBasedConnectionResolver(), avStatisticsConsumer: AVStatisticsConsumer()) else {
-            return
-        }
-        player = BBCSMPPlayerBuilder().withPlayerItemProvider(playerItemProvider).build()
+        let mediaSelector = MediaSelectorItemProviderBuilder(VPID: network.id,
+                                                             mediaSet: "mobile-phone-main", AVType: .audio, streamType: .VOD, avStatisticsConsumer: AVStatisticsConsumer())
+        player = BBCSMPPlayerBuilder().withPlayerItemProvider(mediaSelector.buildItemProvider()).build()
     }
 }
 

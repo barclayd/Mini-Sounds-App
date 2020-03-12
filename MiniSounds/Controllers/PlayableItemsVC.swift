@@ -84,7 +84,7 @@ class PlayableItemsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let playable = configViewModel.config.playable[indexPath.row]
-        let nextScreen = PlayerScreen()
+        let nextScreen = PlayerScreen(network: playable.network)
         nextScreen.title = playable.titles.primary
         navigationController?.pushViewController(nextScreen, animated: true)
     }
